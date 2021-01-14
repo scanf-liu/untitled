@@ -27,6 +27,7 @@ public class Solution {
                 count[i]--;
             }
         }
+        System.out.println("helper");
         return ans.toString();
     }
 }
