@@ -27,18 +27,19 @@ package leetCode._121_买卖股票;
 
 public class _121_买卖股票 {
     public static void main(String[] args) {
-        System.out.println(Solution.maxProfit(new int[]{7,3,6,8,9}));
+        System.out.println(Solution.maxProfit(new int[]{7, 3, 6, 8, 9}));
 
     }
 }
+
 class Solution {
     public static int maxProfit(int[] prices) {
         if (prices.length == 0) return 0;
         int ans = 0;
         int min = prices[0];
-        for(int i=1; i< prices.length; i++){
-            ans = Math.max(prices[i]-min,ans);
-            if (prices[i] < min)  min = prices[i];
+        for (int i = 1; i < prices.length; i++) {
+            ans = Math.max(prices[i] - min, ans);
+            if (prices[i] < min) min = prices[i];
         }
         return ans;
     }

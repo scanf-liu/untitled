@@ -4,7 +4,7 @@ import leetCode.TreeNode.TreeNode;
 
 public class Solution {
     public static TreeNode invertTree(TreeNode root) {
-        if(root == null) return root;
+        if (root == null) return root;
         TreeNode helper = root.left;
         root.left = root.right;
         root.right = helper;

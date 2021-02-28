@@ -18,8 +18,8 @@ package leetCode_offer._13_机器人的运动范围;
 
 public class test {
     public static void main(String[] args) {
-        System.out.println(new Solution().movingCount(100,100,20));
-        System.out.println(new Solution2().movingCount(100,100,20));
-        System.out.println(new Solution1().movingCount(100,100,20));
+        System.out.println(new Solution().movingCount(100, 100, 20));
+        System.out.println(new Solution2().movingCount(100, 100, 20));
+        System.out.println(new Solution1().movingCount(100, 100, 20));
     }
 }

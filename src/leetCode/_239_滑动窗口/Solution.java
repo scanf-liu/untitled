@@ -30,39 +30,40 @@ public class Solution {
     }
 
     public static int[] maxSlidingWindow1(int[] nums, int k) {
-        if(nums == null || nums.length < 2) return nums;
+        if (nums == null || nums.length < 2) return nums;
         // 双向队列 保存当前窗口最大值的数组位置 保证队列中数组位置的数值按从大到小排序
         LinkedList<Integer> queue = new LinkedList();
         // 结果数组
-        int[] result = new int[nums.length-k+1];
+        int[] result = new int[nums.length - k + 1];
         // 遍历nums数组
-        for(int i = 0;i < nums.length;i++){
+        for (int i = 0; i < nums.length; i++) {
             // 保证从大到小 如果前面数小则需要依次弹出，直至满足要求
-            while(!queue.isEmpty() && nums[queue.peekLast()] <= nums[i]){
+            while (!queue.isEmpty() && nums[queue.peekLast()] <= nums[i]) {
                 queue.pollLast();
             }
             // 添加当前值对应的数组下标
             queue.addLast(i);
             // 判断当前队列中队首的值是否有效
-            if(queue.peek() <= i-k){
+            if (queue.peek() <= i - k) {
                 queue.poll();
             }
             // 当窗口长度为k时 保存当前窗口中最大值
-            if(i+1 >= k){
-                result[i+1-k] = nums[queue.peek()];
+            if (i + 1 >= k) {
+                result[i + 1 - k] = nums[queue.peek()];
             }
         }
         return result;
     }
+
     public static int[] maxSlidingWindow2(int[] nums, int k) {
         LinkedList<Integer> list = new LinkedList<Integer>();
         int[] ans = new int[nums.length - k + 1];
 
 
-        for(int i = 0 ; i < k-1; i++){
-            while(list.size() != k){
-                if(list.size() == 0) list.addLast(nums[i]);
-                else if(list.getLast() < nums[i]) list.removeLast();
+        for (int i = 0; i < k - 1; i++) {
+            while (list.size() != k) {
+                if (list.size() == 0) list.addLast(nums[i]);
+                else if (list.getLast() < nums[i]) list.removeLast();
                 else list.addLast(nums[i]);
                 //list.addLast(nums[i]);
             }
@@ -70,11 +71,11 @@ public class Solution {
         }
 
 
-        for(int i = 0; i < ans.length ; i++){
-            while(list.size() != k){
-                if(list.size() == 0) list.addLast(nums[i+k-1]);
-                else if(list.getLast() < nums[i+k-1]) list.removeLast();
-                else list.addLast(nums[i+k-1]);
+        for (int i = 0; i < ans.length; i++) {
+            while (list.size() != k) {
+                if (list.size() == 0) list.addLast(nums[i + k - 1]);
+                else if (list.getLast() < nums[i + k - 1]) list.removeLast();
+                else list.addLast(nums[i + k - 1]);
                 //list.addLast(nums[k-i+1]);
             }
             ans[i] = list.removeFirst();

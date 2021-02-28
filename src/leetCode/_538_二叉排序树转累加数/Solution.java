@@ -4,6 +4,7 @@ import leetCode.TreeNode.TreeNode;
 
 public class Solution {
     int sum = 0;
+
     public TreeNode convertBST(TreeNode root) {
         if (root == null) {
             return null;

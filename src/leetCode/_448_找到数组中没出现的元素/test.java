@@ -20,6 +20,7 @@ package leetCode._448_找到数组中没出现的元素;
 
 public class test {
     public static void main(String[] args) {
-        System.out.println(new Solution().findDisappearedNumbers(new int[]{1,1,1,1,1,1,1,1,2}));
+        System.out.println(new Solution().findDisappearedNumbers(new int[]{1, 1, 1, 1, 1, 1, 1, 1, 2}));
+        System.out.println(new Solution1().findDisappearedNumbers(new int[]{1, 1, 1, 1, 1, 1, 1, 1, 2}));
     }
 }

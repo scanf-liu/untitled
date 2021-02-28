@@ -21,7 +21,7 @@ import java.util.Arrays;
 
 public class test {
     public static void main(String[] args) {
-        int[] a = new int[]{3,21,2,4,5,6,7,2};
+        int[] a = new int[]{3, 21, 2, 4, 5, 6, 7, 2};
         System.out.println(Arrays.toString(new Solution().getLeastNumbers(a, 4)));
         System.out.println(Arrays.toString(new Solution1().getLeastNumbers(a, 4)));
     }

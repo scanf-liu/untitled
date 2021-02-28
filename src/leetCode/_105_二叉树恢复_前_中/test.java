@@ -26,25 +26,27 @@ package leetCode._105_二叉树恢复_前_中;
 
 
 import java.util.HashMap;
+
 import leetCode.TreeNode.*;
 
 public class test {
     public static void main(String[] args) {
-        int[] a = {1,4,6,8,9};
-        TreeNode ans = Solution.buildTree(new int[]{3,9,20,15,7},new int[]{9,3,15,20,7});
+        int[] a = {1, 4, 6, 8, 9};
+        TreeNode ans = Solution.buildTree(new int[]{3, 9, 20, 15, 7}, new int[]{9, 3, 15, 20, 7});
         TreeOperation.show(ans);
     }
 }
 
 class Solution {
-    public static TreeNode buildTree(int[] preorder, int[] inorder){
+    public static TreeNode buildTree(int[] preorder, int[] inorder) {
         HashMap<Integer, Integer> map = new HashMap<>();
         for (int i = 0; i < inorder.length; i++) {
             map.put(inorder[i], i);
         }
         return build(preorder, 0, preorder.length, inorder, 0, inorder.length, map);
     }
-    public static TreeNode build(int[] preorder, int p_start, int p_end, int[] inorder, int i_start, int i_end, HashMap<Integer, Integer> map){
+
+    public static TreeNode build(int[] preorder, int p_start, int p_end, int[] inorder, int i_start, int i_end, HashMap<Integer, Integer> map) {
 
         if (p_start == p_end) {
             return null;

@@ -23,20 +23,20 @@ package leetCode._647_回文子串;
 //        著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 
 
-
 public class Solution {
     public int countSubstrings(String s) {
-        int cnt=0;
-        char [] str=s.toCharArray();
-        for(int i=0;i<s.length();i++){
-            cnt+=midwen(i,i+1,str);
-            cnt+=midwen(i,i,str);
+        int cnt = 0;
+        char[] str = s.toCharArray();
+        for (int i = 0; i < s.length(); i++) {
+            cnt += midwen(i, i + 1, str);
+            cnt += midwen(i, i, str);
         }
         return cnt;
     }
-    public int midwen(int id1,int id2,char[] s){
-        int times=0;
-        while (id1>=0&&id2<s.length&&s[id1]==s[id2]){
+
+    public int midwen(int id1, int id2, char[] s) {
+        int times = 0;
+        while (id1 >= 0 && id2 < s.length && s[id1] == s[id2]) {
             times++;
             id1--;
             id2++;

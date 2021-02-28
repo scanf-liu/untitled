@@ -34,16 +34,16 @@ import java.util.List;
 public class test {
     public static void main(String[] args) {
         List<List<String>> equations = new ArrayList<>();
-        equations.add(Arrays.asList(new String[]{"a","b"})) ;
-        equations.add(Arrays.asList(new String[]{"b","c"})) ;
-        equations.add(Arrays.asList(new String[]{"aa","bb"})) ;
-        double[] value = new double[]{2.0,5.0,6.0};
+        equations.add(Arrays.asList(new String[]{"a", "b"}));
+        equations.add(Arrays.asList(new String[]{"b", "c"}));
+        equations.add(Arrays.asList(new String[]{"aa", "bb"}));
+        double[] value = new double[]{2.0, 5.0, 6.0};
         List<List<String>> queries = new ArrayList<>();
-        queries.add(Arrays.asList(new String[]{"a","b"})) ;
-        queries.add(Arrays.asList(new String[]{"a","c"})) ;
-        queries.add(Arrays.asList(new String[]{"aa","bb"})) ;
-        queries.add(Arrays.asList(new String[]{"a","bb"})) ;
-        value = new Solution().calcEquation(equations,value,queries);
+        queries.add(Arrays.asList(new String[]{"a", "b"}));
+        queries.add(Arrays.asList(new String[]{"a", "c"}));
+        queries.add(Arrays.asList(new String[]{"aa", "bb"}));
+        queries.add(Arrays.asList(new String[]{"a", "bb"}));
+        value = new Solution().calcEquation(equations, value, queries);
         System.out.println(Arrays.toString(value));
     }
 }

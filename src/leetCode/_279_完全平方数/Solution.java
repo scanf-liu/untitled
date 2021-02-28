@@ -65,6 +65,7 @@ public class Solution {
         map.put(n, count);
         return count;
     }
+
     public static int numSquares1(int n) {
         int[] dp = new int[n + 1]; // 默认初始化值都为0
         for (int i = 1; i <= n; i++) {

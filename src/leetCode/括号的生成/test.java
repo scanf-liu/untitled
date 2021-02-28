@@ -29,7 +29,7 @@ public class test {
     public static void main(String[] args) {
         List<String> a = Solution.generateParenthesis(3);
 
-        for (int i = 0 ; i < a.size() ; i++){
+        for (int i = 0; i < a.size(); i++) {
             System.out.println(a.get(i));
         }
 
@@ -47,18 +47,18 @@ class Solution {
         List<String> list = new ArrayList<String>();
         list.add(s);
         int flag, size1;
-        for (int i = 0 ; i < n*2 - 1 ; i++){
+        for (int i = 0; i < n * 2 - 1; i++) {
             size1 = list.size();
-            for (int j = 0; j< size1; j++){
+            for (int j = 0; j < size1; j++) {
                 s = list.remove(0);
-                flag = judge(s,n);
-                if(flag == 0){
-                    list.add(s+')');
-                }else if (flag == 1){
-                    list.add(s+'(');
-                }else{
-                    list.add(s+'(');
-                    list.add(s+')');
+                flag = judge(s, n);
+                if (flag == 0) {
+                    list.add(s + ')');
+                } else if (flag == 1) {
+                    list.add(s + '(');
+                } else {
+                    list.add(s + '(');
+                    list.add(s + ')');
                 }
 
             }
@@ -66,15 +66,15 @@ class Solution {
         return list;
     }
 
-    static int judge (String s, int n){
+    static int judge(String s, int n) {
 
         int a = 0, b = 0;
-        for (int i= 0 ; i<s.length(); i++){
-            if (s.charAt(i)=='(') a++;
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == '(') a++;
             else b++;
         }
         if (a == n) return 0;
-        else if ( a == b ) return 1;
+        else if (a == b) return 1;
         else return 2;
     }
 

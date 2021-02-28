@@ -5,18 +5,18 @@ import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
-class ShareResource{
+class ShareResource {
     private int num = 1;
     private Lock lock = new ReentrantLock();
     private Condition condition1 = lock.newCondition();
     private Condition condition2 = lock.newCondition();
     private Condition condition3 = lock.newCondition();
 
-    public void print1(){
+    public void print1() {
         lock.lock();
         try {
-            while(num != 1) condition1.await();
-            System.out.println(Thread.currentThread().getName()+"\tprint1");
+            while (num != 1) condition1.await();
+            System.out.println(Thread.currentThread().getName() + "\tprint1");
             num = 2;
             condition2.signal();
         } catch (InterruptedException e) {
@@ -26,11 +26,11 @@ class ShareResource{
         }
     }
 
-    public void print2(){
+    public void print2() {
         lock.lock();
         try {
-            while(num != 2) condition2.await();
-            System.out.println(Thread.currentThread().getName()+"\tprint2");
+            while (num != 2) condition2.await();
+            System.out.println(Thread.currentThread().getName() + "\tprint2");
             num = 3;
             condition3.signal();
         } catch (InterruptedException e) {
@@ -40,11 +40,11 @@ class ShareResource{
         }
     }
 
-    public void print3(){
+    public void print3() {
         lock.lock();
         try {
-            while(num != 3) condition3.await();
-            System.out.println(Thread.currentThread().getName()+"\tprint3");
+            while (num != 3) condition3.await();
+            System.out.println(Thread.currentThread().getName() + "\tprint3");
             num = 1;
             condition1.signal();
         } catch (InterruptedException e) {

@@ -24,13 +24,13 @@ import java.util.List;
 
 public class test {
     public static void main(String[] args) {
-        ListNode a = new ListNode(5,null);
-        a = new ListNode(55,a);
-        a = new ListNode(555,a);
-        a = new ListNode(5555,a);
-        a = new ListNode(55555,a);
-        a = Solution.removeNthFromEnd(a,5);
-        for (int i = 0; i< 4; i++){
+        ListNode a = new ListNode(5, null);
+        a = new ListNode(55, a);
+        a = new ListNode(555, a);
+        a = new ListNode(5555, a);
+        a = new ListNode(55555, a);
+        a = Solution.removeNthFromEnd(a, 5);
+        for (int i = 0; i < 4; i++) {
             System.out.println(a.val);
             a = a.next;
         }
@@ -38,13 +38,21 @@ public class test {
 }
 
 
-
 class ListNode {
     int val;
     ListNode next;
-    ListNode() {}
-    ListNode(int val) { this.val = val; }
-    ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+
+    ListNode() {
+    }
+
+    ListNode(int val) {
+        this.val = val;
+    }
+
+    ListNode(int val, ListNode next) {
+        this.val = val;
+        this.next = next;
+    }
 }
 
 class Solution {
@@ -52,18 +60,18 @@ class Solution {
         ListNode tail = head;
         List<ListNode> list = new ArrayList<ListNode>();
 
-        while (tail != null){
+        while (tail != null) {
             list.add(tail);
             tail = tail.next;
         }
         list.add(null);
-        if (list.size() == 0|| list.size()== 1){
+        if (list.size() == 0 || list.size() == 1) {
             return null;
         }
-        if ( n == list.size()-1){
+        if (n == list.size() - 1) {
             list.remove(0);
-        }else{
-            list.get(list.size()-n-2).next = list.get(list.size()-n);
+        } else {
+            list.get(list.size() - n - 2).next = list.get(list.size() - n);
         }
 
         return list.get(0);

@@ -28,7 +28,7 @@ import java.util.Deque;
 
 public class test {
     public static void main(String[] args) {
-        char[][] ma = {{'1','0','1','0'},{'1','0','1','0'},{'1','0','1','0'}};
+        char[][] ma = {{'1', '0', '1', '0'}, {'1', '0', '1', '0'}, {'1', '0', '1', '0'}};
         System.out.println(Solution.maximalRectangle(ma));
     }
 }

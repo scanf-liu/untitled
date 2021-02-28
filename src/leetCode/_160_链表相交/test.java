@@ -17,10 +17,10 @@ import leetCode.ListNode.*;
 
 public class test {
     public static void main(String[] args) {
-        ListNode node = Construction.construct(new int[]{1,2,3,4,5,6,7});
-        ListNode node1 = new ListNode(9,node.next);
-        System.out.println(Solution.getIntersectionNode(node,node1).val);
-        System.out.println(Solution.getIntersectionNode1(node,node1).val);
+        ListNode node = Construction.construct(new int[]{1, 2, 3, 4, 5, 6, 7});
+        ListNode node1 = new ListNode(9, node.next);
+        System.out.println(Solution.getIntersectionNode(node, node1).val);
+        System.out.println(Solution.getIntersectionNode1(node, node1).val);
     }
 }
 
@@ -29,25 +29,25 @@ class Solution {
         ListNode node1 = headA;
         ListNode node2 = headB;
         int sizeA = 0, sizeB = 0;
-        while(node1 != null){
+        while (node1 != null) {
             node1 = node1.next;
             sizeA++;
         }
-        while(node2 != null){
+        while (node2 != null) {
             node2 = node2.next;
             sizeB++;
         }
-        int length = Math.min(sizeA,sizeB);
+        int length = Math.min(sizeA, sizeB);
         node1 = headA;
         node2 = headB;
-        for(int i = 0; i < sizeA - length; i++){
+        for (int i = 0; i < sizeA - length; i++) {
             node1 = node1.next;
         }
-        for(int i = 0; i < sizeB - length; i++){
+        for (int i = 0; i < sizeB - length; i++) {
             node2 = node2.next;
         }
-        for(int i = 0; i < length; i++){
-            if(node1 == node2) return node2;
+        for (int i = 0; i < length; i++) {
+            if (node1 == node2) return node2;
             node1 = node1.next;
             node2 = node2.next;
         }

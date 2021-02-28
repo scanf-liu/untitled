@@ -5,6 +5,7 @@ public class Solution {
     public boolean verifyPostorder(int[] postorder) {
         return helper(postorder, 0, postorder.length - 1);
     }
+
     private boolean helper(int[] postorder, int left, int right) {
         //如果left==right，就一个节点不需要判断了，如果left>right说明没有节点，
         //也不用再看了,否则就要继续往下判断

@@ -4,12 +4,12 @@ import leetCode.ListNode.ListNode;
 
 public class Solution1 {
     public int[] reversePrint(ListNode head) {
-        if(head == null) {
+        if (head == null) {
             return new int[]{};
         }
         ListNode currentHead = head;
         int nums = 1;
-        while(head.next!=null) {
+        while (head.next != null) {
             ListNode next = head.next;
             head.next = next.next;
             next.next = currentHead;
@@ -17,7 +17,7 @@ public class Solution1 {
             nums++;
         }
         int[] res = new int[nums];
-        for(int i=0;i<res.length;i++) {
+        for (int i = 0; i < res.length; i++) {
             res[i] = currentHead.val;
             currentHead = currentHead.next;
         }

@@ -20,9 +20,9 @@ import java.util.Arrays;
 
 public class test {
     public static void main(String[] args) {
-        int[] a = new int[] {2,3,1};
+        int[] a = new int[]{2, 3, 1};
         Solution.nextPermutation(a);
-        for(int i = 0; i < a.length ; i++){
+        for (int i = 0; i < a.length; i++) {
             System.out.println(a[i]);
         }
 
@@ -31,27 +31,27 @@ public class test {
 
 class Solution {
     public static void nextPermutation(int[] nums) {
-        int flag = nums.length-1, flag_max = nums.length-1, b = 0;
-        if (nums.length == 0) return ;
-        for(int i = nums.length - 2; i > -1; i--){
-            if (nums[i] > nums[flag_max]){
+        int flag = nums.length - 1, flag_max = nums.length - 1, b = 0;
+        if (nums.length == 0) return;
+        for (int i = nums.length - 2; i > -1; i--) {
+            if (nums[i] > nums[flag_max]) {
                 flag_max = i;
                 b++;
             }
-            if (nums[i] < nums[flag_max]){
+            if (nums[i] < nums[flag_max]) {
                 flag = i;
                 break;
             }
         }
 
-        if (b == nums.length-1){
+        if (b == nums.length - 1) {
             Arrays.sort(nums);
             return;
-        }else{
+        } else {
 
 
-            for (int i = nums.length - 1 ; i > flag ; i--){
-                if (nums[i] > nums[flag] && nums[i] < nums[flag_max]){
+            for (int i = nums.length - 1; i > flag; i--) {
+                if (nums[i] > nums[flag] && nums[i] < nums[flag_max]) {
                     flag_max = i;
                 }
             }
@@ -59,9 +59,9 @@ class Solution {
             nums[flag_max] = nums[flag];
             nums[flag] = b;
 
-            for (int i = flag + 1 ; i < nums.length ; i++){
-                for (int j = i + 1; j < nums.length ; j++){
-                    if (nums[i] > nums [j]){
+            for (int i = flag + 1; i < nums.length; i++) {
+                for (int j = i + 1; j < nums.length; j++) {
+                    if (nums[i] > nums[j]) {
                         b = nums[i];
                         nums[i] = nums[j];
                         nums[j] = b;

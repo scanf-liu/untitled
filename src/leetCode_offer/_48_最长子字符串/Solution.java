@@ -7,12 +7,12 @@ public class Solution {
         int max = 0;
         int temp = 0;
         HashMap<Character, Integer> map = new HashMap<>();
-        for(int i = 0; i < s.length(); i++){
-            if(map.containsKey(s.charAt(i)) && map.get(s.charAt(i)) + temp >= i){
+        for (int i = 0; i < s.length(); i++) {
+            if (map.containsKey(s.charAt(i)) && map.get(s.charAt(i)) + temp >= i) {
                 temp = i - map.get(s.charAt(i));
-            }else temp++;
-            map.put(s.charAt(i),i);
-            if(temp > max) max = temp;
+            } else temp++;
+            map.put(s.charAt(i), i);
+            if (temp > max) max = temp;
         }
         return max;
     }

@@ -9,29 +9,29 @@ public class Solution {
             int j = res;
             while (i < j) {
                 int m = (i + j) / 2;
-                if (tails[m] < num){
+                if (tails[m] < num) {
                     i = m + 1;
-                }
-                else
+                } else
                     j = m;
             }
             tails[j] = num;
             if (res == j)
-                res ++ ;
+                res++;
         }
         return res;
     }
+
     public static int lengthOfLIS1(int[] nums) {
-        if(nums.length == 0) return 0;
-        int[] helper = new int[nums.length+1];
+        if (nums.length == 0) return 0;
+        int[] helper = new int[nums.length + 1];
         helper[0] = 1;
-        helper[nums.length] =1;
-        for(int i = 1; i < nums.length; i++){
+        helper[nums.length] = 1;
+        for (int i = 1; i < nums.length; i++) {
             helper[i] = 1;
-            for(int j = 0; j < i; j++){
-                if(nums[i] > nums[j]) helper[i] = Math.max(helper[j]+1, helper[i]);
+            for (int j = 0; j < i; j++) {
+                if (nums[i] > nums[j]) helper[i] = Math.max(helper[j] + 1, helper[i]);
             }
-            helper[nums.length] = Math.max(helper[nums.length], helper[i] );
+            helper[nums.length] = Math.max(helper[nums.length], helper[i]);
         }
         //System.out.println(Arrays.toString(helper));
         return helper[nums.length];

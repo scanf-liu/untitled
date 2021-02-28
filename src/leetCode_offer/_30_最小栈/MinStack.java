@@ -4,7 +4,9 @@ import java.util.LinkedList;
 
 public class MinStack {
 
-    /** initialize your data structure here. */
+    /**
+     * initialize your data structure here.
+     */
 
     LinkedList<Integer> list;
     LinkedList<Integer> helper;
@@ -17,7 +19,7 @@ public class MinStack {
 
     public void push(int x) {
         list.addLast(x);
-        if(x < helper.getLast()) helper.addLast(x);
+        if (x < helper.getLast()) helper.addLast(x);
         else helper.addLast(helper.getLast());
     }
 

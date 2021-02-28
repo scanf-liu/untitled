@@ -42,7 +42,7 @@ class Solution {
         }
         int[] buy = new int[prices.length];
         int[] sell = new int[prices.length];
-        buy[0] = - prices[0];
+        buy[0] = -prices[0];
         sell[0] = 0;
         buy[1] = Math.max(buy[0], -prices[1]);
         sell[1] = Math.max(sell[0], buy[0] + prices[1]);

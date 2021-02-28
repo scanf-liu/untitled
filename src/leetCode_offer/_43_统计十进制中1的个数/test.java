@@ -21,7 +21,6 @@ package leetCode_offer._43_统计十进制中1的个数;
         著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。*/
 
 
-
 public class test {
     public static void main(String[] args) {
         System.out.println(new Solution().countDigitOne(10121));

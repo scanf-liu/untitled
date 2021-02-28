@@ -19,7 +19,7 @@ import leetCode.ListNode.ListNode;
 
 public class _148_排序链表 {
     public static void main(String[] args) {
-        ListNode root = Construction.construct(new int[]{4,2,1,-1,3});
+        ListNode root = Construction.construct(new int[]{4, 2, 1, -1, 3});
         ;
         Construction.show(Solution.sortList(root));
     }
@@ -28,11 +28,11 @@ public class _148_排序链表 {
 class Solution {
     public static ListNode sortList(ListNode head) {
 
-        if(head==null || head.next==null) return head;
+        if (head == null || head.next == null) return head;
         ListNode slow = head; //慢指针
         ListNode fast = head.next; //快指针
 
-        while(fast!=null && fast.next!=null){ //快慢指针找到链表中点
+        while (fast != null && fast.next != null) { //快慢指针找到链表中点
             slow = slow.next; //慢指针走一步
             fast = fast.next.next; //快指针走两步
         }
@@ -43,11 +43,12 @@ class Solution {
         ListNode right = sortList(rightHead);
         return merge(left, right);
     }
-    public static ListNode cut(ListNode head){
-        if(head == null || head.next == null) return head;
+
+    public static ListNode cut(ListNode head) {
+        if (head == null || head.next == null) return head;
         ListNode slow = head;
         ListNode fast = head;
-        while(fast != null && fast.next != null){
+        while (fast != null && fast.next != null) {
             fast = fast.next.next;
             slow = slow.next;
         }
@@ -55,20 +56,21 @@ class Solution {
         slow.next = null;
         return fast;
     }
-    public static ListNode merge(ListNode root1, ListNode root2){
+
+    public static ListNode merge(ListNode root1, ListNode root2) {
         ListNode root = new ListNode(-1);
         ListNode temp = root;
-        while(root1 != null && root2 != null){
-            if(root1.val < root2.val){
+        while (root1 != null && root2 != null) {
+            if (root1.val < root2.val) {
                 temp.next = root1;
                 root1 = root1.next;
-            }else{
+            } else {
                 temp.next = root2;
                 root2 = root2.next;
             }
             temp = temp.next;
         }
-        temp.next = (root1 != null? root1:root2);
+        temp.next = (root1 != null ? root1 : root2);
         return root.next;
     }
 }

@@ -17,17 +17,17 @@ public class ServerTest {
         String pass = br.readLine();
         boolean flag = false;
 
-        PrintWriter out = new PrintWriter(s.getOutputStream(),true);
+        PrintWriter out = new PrintWriter(s.getOutputStream(), true);
 
         List<User> users = UserDB.getUsers();
-        User user = new User(use,pass);
-        if(users.contains(user)){
+        User user = new User(use, pass);
+        if (users.contains(user)) {
             flag = true;
         }
 
-        if(flag){
+        if (flag) {
             out.println("ok");
-        }else out.println("!");
+        } else out.println("!");
 
 
         s.close();

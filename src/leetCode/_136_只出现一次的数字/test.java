@@ -25,14 +25,14 @@ package leetCode._136_只出现一次的数字;
 
 public class test {
     public static void main(String[] args) {
-        System.out.println(Solution.singleNumber(new int[]{1,5,6,7,8,1,5,6,2,7,8}));
+        System.out.println(Solution.singleNumber(new int[]{1, 5, 6, 7, 8, 1, 5, 6, 2, 7, 8}));
     }
 }
 
 class Solution {
     public static int singleNumber(int[] nums) {
         int ans = nums[0];
-        for(int i = 1; i < nums.length; i++){
+        for (int i = 1; i < nums.length; i++) {
             ans ^= nums[i];
         }
         return ans;

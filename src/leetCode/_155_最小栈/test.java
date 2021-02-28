@@ -38,9 +38,6 @@ minStack.getMin();   --> 返回 -2.
 */
 
 
-
-
-
 public class test {
     public static void main(String[] args) {
         MinStack obj = new MinStack();
@@ -56,15 +53,14 @@ public class test {
 }
 
 
-
-
-
 class MinStack {
 
     Deque<Integer> stack;
     Deque<Integer> helper;
 
-    /** initialize your data structure here. */
+    /**
+     * initialize your data structure here.
+     */
     public MinStack() {
         this.stack = new LinkedList<>();
         this.helper = new LinkedList<>();

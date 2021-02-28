@@ -22,7 +22,7 @@ public class JConsoleTool {
 
     public static void main(String[] args) throws Exception {
         fillHeap(1000);
-        while(true){
+        while (true) {
             //让其一直运行着
         }
 

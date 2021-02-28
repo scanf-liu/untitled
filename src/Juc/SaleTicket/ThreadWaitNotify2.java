@@ -6,17 +6,17 @@ import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
-class AirCondition2{
+class AirCondition2 {
     private int num = 0;
     private Lock lock = new ReentrantLock();
     Condition condition = lock.newCondition();
 
-    public void de(){
+    public void de() {
         lock.lock();
         try {
-            while(num == 0) condition.await();
+            while (num == 0) condition.await();
             num--;
-            System.out.println(Thread.currentThread().getName()+'\t'+num);
+            System.out.println(Thread.currentThread().getName() + '\t' + num);
             condition.signalAll();
         } catch (InterruptedException e) {
             e.printStackTrace();
@@ -24,12 +24,13 @@ class AirCondition2{
             lock.unlock();
         }
     }
+
     public void in() {
         lock.lock();
         try {
             while (num != 0) condition.await();
             num++;
-            System.out.println(Thread.currentThread().getName()+"\t"+num);
+            System.out.println(Thread.currentThread().getName() + "\t" + num);
             condition.signalAll();
         } catch (InterruptedException e) {
             e.printStackTrace();

@@ -7,6 +7,7 @@ public class ThreadDeadLockTestCase_2 {
      */
     static class SynAddRunnalbe implements Runnable {
         int a, b;
+
         public SynAddRunnalbe(int a, int b) {
             this.a = a;
             this.b = b;

@@ -4,44 +4,44 @@ public class Solution {
     public static int maximalSquare(char[][] matrix) {
         int ans = -1;
 
-        for(int i = 0; i < matrix.length ; i++){
-            for(int j = 0; j < matrix[0].length ; j++){
-                if(matrix[i][j] == '0') continue;
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[0].length; j++) {
+                if (matrix[i][j] == '0') continue;
 
                 int plus = ans + 1;
                 boolean flag = true;
 
-                if(j+plus >= matrix[0].length) continue;
-                if(i+plus >= matrix.length) continue;
+                if (j + plus >= matrix[0].length) continue;
+                if (i + plus >= matrix.length) continue;
 
-                for (int a = i; a <= i + plus ; a++){
-                    for(int b = j; b <= j + plus ; b++){
-                        if (matrix[a][b] == '0'){
+                for (int a = i; a <= i + plus; a++) {
+                    for (int b = j; b <= j + plus; b++) {
+                        if (matrix[a][b] == '0') {
                             flag = false;
                             break;
                         }
                     }
-                    if(!flag) break;
+                    if (!flag) break;
                 }
-                if(!flag) continue;
+                if (!flag) continue;
 
-                while(true){
+                while (true) {
                     ans = plus;
                     plus++;
-                    if(j+plus >= matrix[0].length) break;
-                    if(i+plus >= matrix.length) break;
-                    for(int a = 0 ; a <= plus ; a++){
-                        if (matrix[i+plus][j+a] == '0' || matrix[i+a][j+plus] == '0'){
+                    if (j + plus >= matrix[0].length) break;
+                    if (i + plus >= matrix.length) break;
+                    for (int a = 0; a <= plus; a++) {
+                        if (matrix[i + plus][j + a] == '0' || matrix[i + a][j + plus] == '0') {
                             flag = false;
                             break;
                         }
                     }
-                    if(!flag) break;
+                    if (!flag) break;
                     System.out.println(plus);
                 }
             }
         }
-        return (ans+1) * (ans+1);
+        return (ans + 1) * (ans + 1);
     }
 
     public static int maximalSquare1(char[][] matrix) {

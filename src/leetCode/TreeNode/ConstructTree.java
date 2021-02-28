@@ -1,11 +1,12 @@
 package leetCode.TreeNode;
 
 import leetCode.TreeNode.TreeNode;
+
 import java.util.Deque;
 import java.util.LinkedList;
 
 public class ConstructTree {
-    public static TreeNode constructTree(Integer[] nums){
+    public static TreeNode constructTree(Integer[] nums) {
         if (nums.length == 0) return new TreeNode(0);
         Deque<TreeNode> nodeQueue = new LinkedList<>();
         // 创建一个根节点
@@ -19,7 +20,7 @@ public class ConstructTree {
         // 记录数组中剩余的元素的数量
         int restLength = nums.length - 1;
 
-        while(restLength > 0) {
+        while (restLength > 0) {
             // 只有最后一行可以不满，其余行必须是满的
 //            // 若输入的数组的数量是错误的，直接跳出程序
 //            if (restLength < lineNodeNum) {
@@ -50,7 +51,7 @@ public class ConstructTree {
     }
 
     public static void main(String[] args) {
-        Integer[] nums = {5,4,8,11,null,13,4,7,2,null,null,null,1};
+        Integer[] nums = {5, 4, 8, 11, null, 13, 4, 7, 2, null, null, null, 1};
         TreeNode root = ConstructTree.constructTree(nums);
         System.out.println(root.val);
     }

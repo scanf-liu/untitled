@@ -8,7 +8,7 @@ import java.util.List;
 
 public class test {
     public static void main(String[] args) {
-        TreeNode temp = ConstructTree.constructTree(new Integer[]{3,9,20,null,null,15,7});
+        TreeNode temp = ConstructTree.constructTree(new Integer[]{3, 9, 20, null, null, 15, 7});
         System.out.println(Arrays.toString(new Solution().levelOrder(temp)));
 
         List<List<Integer>> ans = new Solution1().levelOrder(temp);

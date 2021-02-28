@@ -27,12 +27,13 @@ package leetCode._114_二叉树展开链表;
         来源：力扣（LeetCode）
         链接：https://leetcode-cn.com/problems/flatten-binary-tree-to-linked-list
         著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。*/
+
 import leetCode.TreeNode.*;
 
 
 public class test {
     public static void main(String[] args) {
-        TreeNode root = ConstructTree.constructTree(new Integer[]{1,2,5,3,4,null,6});
+        TreeNode root = ConstructTree.constructTree(new Integer[]{1, 2, 5, 3, 4, null, 6});
         Solution.flatten(root);
         TreeOperation.show(root);
     }
@@ -40,6 +41,7 @@ public class test {
 
 class Solution {
     private static TreeNode pre = null;
+
     public static void flatten(TreeNode root) {
         if (root == null)
             return;

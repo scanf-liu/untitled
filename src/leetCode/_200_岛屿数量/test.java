@@ -34,10 +34,9 @@ package leetCode._200_岛屿数量;
 */
 
 
-
 public class test {
     public static void main(String[] args) {
-        char[][] a  = new char[][]{{'1','1','1'},{'1','0','1'},{'1','1','1'}};
+        char[][] a = new char[][]{{'1', '1', '1'}, {'1', '0', '1'}, {'1', '1', '1'}};
         System.out.println(Solution.numIslands(a));
     }
 }
@@ -47,27 +46,28 @@ class Solution {
     public static int numIslands(char[][] grid) {
         int ans = 0;
         boolean[][] helper = new boolean[grid.length][grid[0].length];
-        for(int i = 0; i < grid.length ; i++){
-            for(int j = 0 ;j < grid[0].length; j++){
-                if(helper[i][j] == true) continue;
-                if(grid[i][j] == '0') helper[i][j] = true;
-                else{
-                    check(grid, helper, i ,j);
+        for (int i = 0; i < grid.length; i++) {
+            for (int j = 0; j < grid[0].length; j++) {
+                if (helper[i][j] == true) continue;
+                if (grid[i][j] == '0') helper[i][j] = true;
+                else {
+                    check(grid, helper, i, j);
                     ans++;
                 }
             }
         }
         return ans;
     }
-    public static void check(char[][] grid, boolean[][] helper,int i ,int j ){
-        if(i < 0 || j < 0 || i >= grid.length || j >= grid[0].length) return;
+
+    public static void check(char[][] grid, boolean[][] helper, int i, int j) {
+        if (i < 0 || j < 0 || i >= grid.length || j >= grid[0].length) return;
         if (helper[i][j] == true) return;
         helper[i][j] = true;
-        if (grid[i][j] == '0' ) return;
-        check(grid,helper,i-1,j);
-        check(grid,helper,i,j+1);
-        check(grid,helper,i,j-1);
-        check(grid,helper,i+1,j);
+        if (grid[i][j] == '0') return;
+        check(grid, helper, i - 1, j);
+        check(grid, helper, i, j + 1);
+        check(grid, helper, i, j - 1);
+        check(grid, helper, i + 1, j);
         //System.gc();
         return;
     }

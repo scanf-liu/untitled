@@ -28,6 +28,6 @@ package leetCode._416_分割数组;
 
 public class test {
     public static void main(String[] args) {
-        System.out.println(new Solution().canPartition(new int[]{1,5,6,2}));
+        System.out.println(new Solution().canPartition(new int[]{1, 5, 6, 2}));
     }
 }

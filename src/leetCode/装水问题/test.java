@@ -11,7 +11,7 @@ package leetCode.装水问题;
 
 public class test {
     public static void main(String[] args) {
-        int[] a = new  int[] {1,8,6,2,5,4,8,3,7};
+        int[] a = new int[]{1, 8, 6, 2, 5, 4, 8, 3, 7};
         System.out.println(Solution.maxArea(a));
     }
 
@@ -25,19 +25,19 @@ class Solution {
         int[] dp = new int[height.length - 1];
 
 
-        dp[0] = Math.min(height[0],height[1])*1;
+        dp[0] = Math.min(height[0], height[1]) * 1;
 
-        for (int i = 1; i < height.length - 1; i++){
-            dp[i] = dp[i-1];
-            for (int j = 0; j < i+1; j++){
-                if (height[j] >= height[i+1] ){
-                    dp[i] = Math.max(dp[i],height[i+1]*(i+1-j));
+        for (int i = 1; i < height.length - 1; i++) {
+            dp[i] = dp[i - 1];
+            for (int j = 0; j < i + 1; j++) {
+                if (height[j] >= height[i + 1]) {
+                    dp[i] = Math.max(dp[i], height[i + 1] * (i + 1 - j));
                     break;
-                }else{
-                    dp[i] = Math.max(dp[i],height[j]*(i+1-j));
+                } else {
+                    dp[i] = Math.max(dp[i], height[j] * (i + 1 - j));
                 }
             }
         }
-        return dp[height.length-2];
+        return dp[height.length - 2];
     }
 }

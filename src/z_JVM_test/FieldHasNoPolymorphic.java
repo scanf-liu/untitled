@@ -10,9 +10,11 @@ public class FieldHasNoPolymorphic {
             //this.showMeTheMoney();
             showMeTheMoney();
         }
-        public void showMoneySp(){
+
+        public void showMoneySp() {
             System.out.println("sp I am Father, i have $" + money1);
         }
+
         public void showMeTheMoney() {
             System.out.println("I am Father, i have $" + money1);
         }

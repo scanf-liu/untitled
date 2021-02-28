@@ -29,13 +29,12 @@ package leetCode._48_旋转图像;
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。*/
 
 
-
 public class test {
     public static void main(String[] args) {
-        int[][] m ={{1,2,6},{1,2,9},{1,2,9}};
+        int[][] m = {{1, 2, 6}, {1, 2, 9}, {1, 2, 9}};
         Solution.rotate(m);
-        for (int i = 0; i<m.length; i++){
-            for (int j = 0; j < m.length; j ++)
+        for (int i = 0; i < m.length; i++) {
+            for (int j = 0; j < m.length; j++)
                 System.out.print(m[i][j]);
             System.out.println("");
         }
@@ -50,13 +49,13 @@ class Solution {
         int temp = 0;
         int pos1 = 0;
         int pos2 = matrix[0].length - 1;
-        while (pos1 < pos2){
+        while (pos1 < pos2) {
             add = 0;
-            while (add < pos2 - pos1){
+            while (add < pos2 - pos1) {
                 temp = matrix[pos1][pos1 + add];
                 matrix[pos1][pos1 + add] = matrix[pos2 - add][pos1];
-                matrix[pos2 - add][pos1] = matrix[pos2][pos2 -add];
-                matrix[pos2][pos2 -add] = matrix[pos1 + add][pos2];
+                matrix[pos2 - add][pos1] = matrix[pos2][pos2 - add];
+                matrix[pos2][pos2 - add] = matrix[pos1 + add][pos2];
                 matrix[pos1 + add][pos2] = temp;
                 add++;
             }

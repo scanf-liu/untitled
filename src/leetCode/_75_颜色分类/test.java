@@ -20,7 +20,7 @@ import java.util.Arrays;
 
 public class test {
     public static void main(String[] args) {
-        int[] nums = {0,2,1,2,1,0,0};
+        int[] nums = {0, 2, 1, 2, 1, 0, 0};
         Solution.sortColors(nums);
         System.out.println(Arrays.toString(nums));
     }
@@ -29,8 +29,8 @@ public class test {
 
 class Solution {
     public static void sortColors(int[] nums) {
-        int left = 0, right = nums.length-1 ,i = 0;
-        while(i <= right && left < right){
+        int left = 0, right = nums.length - 1, i = 0;
+        while (i <= right && left < right) {
             if (nums[left] == 0) {
                 left++;
                 continue;
@@ -41,19 +41,19 @@ class Solution {
                 continue;
             }
 
-            if (left > i){
+            if (left > i) {
                 i = left;
             }
 
-            if (nums[i] == 0){
+            if (nums[i] == 0) {
                 nums[i] = nums[left];
                 nums[left] = 0;
                 left++;
-            }else if(nums[i] == 2){
+            } else if (nums[i] == 2) {
                 nums[i] = nums[right];
                 nums[right] = 2;
                 right--;
-            }else i++;
+            } else i++;
         }
         return;
 

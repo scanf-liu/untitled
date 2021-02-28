@@ -12,7 +12,7 @@ public class ClientTest {
         System.out.println("password:");
         String password = br.readLine();
 
-        PrintWriter out = new PrintWriter(s.getOutputStream(),true);
+        PrintWriter out = new PrintWriter(s.getOutputStream(), true);
         out.println(users);
         out.println(password);
 

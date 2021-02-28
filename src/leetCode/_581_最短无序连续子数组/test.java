@@ -12,7 +12,7 @@ package leetCode._581_最短无序连续子数组;
 
 public class test {
     public static void main(String[] args) {
-        int[] a = new int[]{1,2,3,5,62,4,56,7,8,23};
+        int[] a = new int[]{1, 2, 3, 5, 62, 4, 56, 7, 8, 23};
         System.out.println(new Solution().findUnsortedSubarray(a));
         System.out.println(new Solution1().findUnsortedSubarray(a));
     }

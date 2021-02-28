@@ -32,20 +32,20 @@ import java.util.List;
 
 public class test {
     public static void main(String[] args) {
-    TreeNode node4 = new TreeNode(4,null,null);
-    TreeNode node5 = new TreeNode(5,null,null);
-    TreeNode node2 = new TreeNode(2,node4,node5);
-    node4 = new TreeNode(5,null,null);
-    node5 = new TreeNode(4,null,null);
-    TreeNode node7 = new TreeNode(2,node4,node5);
-    TreeNode node1 = new TreeNode(1,node2,node7);
-    System.out.println(Solution.levelOrder(node1).toString());
+        TreeNode node4 = new TreeNode(4, null, null);
+        TreeNode node5 = new TreeNode(5, null, null);
+        TreeNode node2 = new TreeNode(2, node4, node5);
+        node4 = new TreeNode(5, null, null);
+        node5 = new TreeNode(4, null, null);
+        TreeNode node7 = new TreeNode(2, node4, node5);
+        TreeNode node1 = new TreeNode(1, node2, node7);
+        System.out.println(Solution.levelOrder(node1).toString());
 
 
     }
 }
 
-class TreeNode{
+class TreeNode {
     int val;
     TreeNode left;
     TreeNode right;
@@ -65,13 +65,13 @@ class Solution {
         LinkedList<TreeNode> link = new LinkedList<TreeNode>();
         link.add(root);
         int size = 1;
-        while(size > 0){
+        while (size > 0) {
             List<Integer> list1 = new ArrayList<Integer>();
-            for (int i = 0; i < size; i++){
+            for (int i = 0; i < size; i++) {
                 TreeNode now = link.removeFirst();
                 list1.add(now.val);
-                if(now.left != null) link.add(now.left);
-                if(now.right != null) link.add(now.right);
+                if (now.left != null) link.add(now.left);
+                if (now.right != null) link.add(now.right);
             }
             list.add(list1);
             size = link.size();

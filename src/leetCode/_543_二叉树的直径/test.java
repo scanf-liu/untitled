@@ -17,12 +17,13 @@ package leetCode._543_二叉树的直径;
 //        来源：力扣（LeetCode）
 //        链接：https://leetcode-cn.com/problems/diameter-of-binary-tree
 //        著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+
 import leetCode.TreeNode.ConstructTree;
 import leetCode.TreeNode.TreeNode;
 
 public class test {
     public static void main(String[] args) {
-        TreeNode a = ConstructTree.constructTree(new Integer[]{1,2,3,4,5,null,null,1,1,1,1,1,null,null,null,null,1});
+        TreeNode a = ConstructTree.constructTree(new Integer[]{1, 2, 3, 4, 5, null, null, 1, 1, 1, 1, 1, null, null, null, null, 1});
         System.out.println(new Solution().diameterOfBinaryTree(a));
     }
 }

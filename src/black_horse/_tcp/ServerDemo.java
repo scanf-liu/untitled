@@ -13,8 +13,8 @@ public class ServerDemo {
         InputStream is = s.getInputStream();
         byte[] bys = new byte[1024];
         int len = is.read(bys);
-        System.out.println(new String(bys,0,len));
-        String str = new String(bys,0,len);
+        System.out.println(new String(bys, 0, len));
+        String str = new String(bys, 0, len);
         OutputStream os = s.getOutputStream();
         os.write(str.toUpperCase().getBytes());
 

@@ -36,10 +36,10 @@ import java.util.Arrays;
 
 public class test {
     public static void main(String[] args) {
-        int[] a = new int[]{1,3,-1,-3,5,3,6,7};
-        System.out.println(Arrays.toString(Solution.maxSlidingWindow(a,3)));
-        System.out.println(Arrays.toString(Solution.maxSlidingWindow1(a,3)));
-        System.out.println(Arrays.toString(Solution.maxSlidingWindow2(a,3)));
+        int[] a = new int[]{1, 3, -1, -3, 5, 3, 6, 7};
+        System.out.println(Arrays.toString(Solution.maxSlidingWindow(a, 3)));
+        System.out.println(Arrays.toString(Solution.maxSlidingWindow1(a, 3)));
+        System.out.println(Arrays.toString(Solution.maxSlidingWindow2(a, 3)));
 
     }
 }

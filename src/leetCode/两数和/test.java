@@ -12,23 +12,24 @@ package leetCode.两数和;
 
 public class test {
     public static void main(String[] args) {
-        int[] a = new int[]  {2,2,0,0,2};
+        int[] a = new int[]{2, 2, 0, 0, 2};
         int b = 4;
         int[] c = new int[2];
-        c = test.twoSum(a,b);
+        c = test.twoSum(a, b);
         System.out.println(c[0]);
         System.out.println(c[1]);
     }
+
     public static int[] twoSum(int[] nums, int target) {
-        for (int i = 0; i<nums.length; i++){
-            for (int j = i+1;j<nums.length; j++ ){
-                if (nums[i]+nums[j]==target){
-                    int a[] = new int[]  {i,j};
+        for (int i = 0; i < nums.length; i++) {
+            for (int j = i + 1; j < nums.length; j++) {
+                if (nums[i] + nums[j] == target) {
+                    int a[] = new int[]{i, j};
                     return a;
                 }
             }
         }
-        int a[] = new int[]  {-1,-1};
+        int a[] = new int[]{-1, -1};
         return a;
     }
 }

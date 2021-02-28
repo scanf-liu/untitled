@@ -26,15 +26,15 @@ package leetCode_offer._04_二维数组中的查找;
 public class test {
     public static void main(String[] args) {
         int[][] a = new int[][]{
-                {1,   4,  7, 11, 15,},
-                {2,   5,  8, 12, 19,},
-                {3,   6,  9, 16, 22,},
+                {1, 4, 7, 11, 15,},
+                {2, 5, 8, 12, 19,},
+                {3, 6, 9, 16, 22,},
                 {10, 13, 14, 17, 24,},
                 {18, 21, 23, 26, 30}
-                };
-        System.out.println(new Solution().findNumberIn2DArray(a,14));
-        System.out.println(new Solution1().findNumberIn2DArray(a,15));
-        System.out.println(new Solution().findNumberIn2DArray(a,20));
-        
+        };
+        System.out.println(new Solution().findNumberIn2DArray(a, 14));
+        System.out.println(new Solution1().findNumberIn2DArray(a, 15));
+        System.out.println(new Solution().findNumberIn2DArray(a, 20));
+
     }
 }

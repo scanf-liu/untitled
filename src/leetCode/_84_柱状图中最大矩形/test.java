@@ -13,14 +13,12 @@ import java.util.Deque;
 */
 
 
-
 public class test {
     public static void main(String[] args) {
-        int[] h = {1,4,6,8,9};
+        int[] h = {1, 4, 6, 8, 9};
         System.out.println(Solution.largestRectangleArea(h));
     }
 }
-
 
 
 class Solution {

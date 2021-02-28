@@ -8,25 +8,27 @@ import java.util.List;
 public class Solution {
     List<List<Integer>> ans = new LinkedList<>();
     LinkedList<Integer> list = new LinkedList<>();
+
     public List<List<Integer>> pathSum(TreeNode root, int sum) {
-        if(root == null) return ans;
+        if (root == null) return ans;
         caculate(root, sum, 0);
         return ans;
     }
-    public void caculate(TreeNode root, int sum, int now){
+
+    public void caculate(TreeNode root, int sum, int now) {
         now = now + root.val;
         list.add(root.val);
-        if(root.left == null && root.right == null){
-            if(now == sum){
+        if (root.left == null && root.right == null) {
+            if (now == sum) {
                 ans.add(new LinkedList(list));
             }
             list.removeLast();
             return;
         }
-        if(root.left != null){
+        if (root.left != null) {
             caculate(root.left, sum, now);
         }
-        if(root.right != null){
+        if (root.right != null) {
             caculate(root.right, sum, now);
         }
         list.removeLast();

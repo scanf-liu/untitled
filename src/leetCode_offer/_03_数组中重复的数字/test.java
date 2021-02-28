@@ -16,11 +16,9 @@ package leetCode_offer._03_数组中重复的数字;
 //        著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 
 
-
-
 public class test {
     public static void main(String[] args) {
-        int[] a = new int[]{1,2,4,5,0,0,1};
+        int[] a = new int[]{1, 2, 4, 5, 0, 0, 1};
         System.out.println(new Solution().findRepeatNumber(a));
         System.out.println(new Solution1().findRepeatNumber(a));
     }

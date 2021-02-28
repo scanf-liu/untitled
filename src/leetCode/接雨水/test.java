@@ -18,10 +18,9 @@ import java.util.Stack;
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。*/
 
 
-
 public class test {
     public static void main(String[] args) {
-        int[] h = new int[] {1,4,9,8,9};
+        int[] h = new int[]{1, 4, 9, 8, 9};
         System.out.println(Solution.trap(h));
     }
 }
@@ -32,13 +31,13 @@ class Solution {
         if (height == null) return 0;
         Stack<Integer> stack = new Stack<>();
         int ans = 0;
-        for (int i = 0 ; i < height.length;i++){
-            while(!stack.isEmpty() && height[stack.peek()] < height[i]){
+        for (int i = 0; i < height.length; i++) {
+            while (!stack.isEmpty() && height[stack.peek()] < height[i]) {
                 int cur = stack.pop();
-                while(!stack.isEmpty() && height[stack.peek()] == height[cur]){
+                while (!stack.isEmpty() && height[stack.peek()] == height[cur]) {
                     stack.pop();
                 }
-                if (!stack.isEmpty()){
+                if (!stack.isEmpty()) {
                     int top = stack.peek();
                     ans += (Math.min(height[top], height[i]) - height[cur]) * (i - top - 1);
                 }

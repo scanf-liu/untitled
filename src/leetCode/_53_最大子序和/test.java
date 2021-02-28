@@ -20,14 +20,12 @@ dp[i] 指的是以i为止的子序列的最大和，所以最后还要二次统�
 */
 
 
-
 public class test {
     public static void main(String[] args) {
-        int[] s = {3,5,7,8,9,-1,6};
+        int[] s = {3, 5, 7, 8, 9, -1, 6};
         System.out.println(Solution.maxSubArray(s));
     }
 }
-
 
 
 class Solution {

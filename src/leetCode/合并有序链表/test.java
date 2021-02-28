@@ -16,18 +16,18 @@ package leetCode.合并有序链表;
 
 public class test {
     public static void main(String[] args) {
-        ListNode tail1 = new ListNode(3,null);
-        ListNode head1 = new ListNode(2,tail1);
-        head1 = new ListNode(2,head1);
-        head1 = new ListNode(1,head1);
+        ListNode tail1 = new ListNode(3, null);
+        ListNode head1 = new ListNode(2, tail1);
+        head1 = new ListNode(2, head1);
+        head1 = new ListNode(1, head1);
 
-        ListNode tail2 = new ListNode(5,null);
-        ListNode head2 = new ListNode(2,tail2);
-        head2 = new ListNode(2,head2);
-        head2 = new ListNode(1,head2);
+        ListNode tail2 = new ListNode(5, null);
+        ListNode head2 = new ListNode(2, tail2);
+        head2 = new ListNode(2, head2);
+        head2 = new ListNode(1, head2);
 
         ListNode head3 = Solution.mergeTwoLists(head1, head2);
-        while (head3 != null){
+        while (head3 != null) {
             System.out.println(head3.val);
             head3 = head3.next;
         }
@@ -38,9 +38,18 @@ public class test {
 class ListNode {
     int val;
     ListNode next;
-    ListNode() {}
-    ListNode(int val) { this.val = val; }
-    ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+
+    ListNode() {
+    }
+
+    ListNode(int val) {
+        this.val = val;
+    }
+
+    ListNode(int val, ListNode next) {
+        this.val = val;
+        this.next = next;
+    }
 }
 
 class Solution {
@@ -51,29 +60,29 @@ class Solution {
 
         ListNode head, tail;
 
-        if (l1.val > l2.val){
+        if (l1.val > l2.val) {
             head = tail = l2;
             l2 = l2.next;
-        }else{
+        } else {
             head = tail = l1;
             l1 = l1.next;
         }
 
-        while(l1 != null || l2 != null){
+        while (l1 != null || l2 != null) {
 
-            if (l1 == null){
+            if (l1 == null) {
                 tail.next = l2;
                 tail = tail.next;
                 l2 = l2.next;
-            }else if (l2 == null){
+            } else if (l2 == null) {
                 tail.next = l1;
                 tail = tail.next;
                 l1 = l1.next;
-            }else if (l1.val > l2.val){
+            } else if (l1.val > l2.val) {
                 tail.next = l2;
                 tail = tail.next;
                 l2 = l2.next;
-            }else{
+            } else {
                 tail.next = l1;
                 tail = tail.next;
                 l1 = l1.next;

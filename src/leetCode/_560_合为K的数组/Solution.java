@@ -16,22 +16,22 @@ import java.util.Map;
 
 
 /*
-* 前缀和                   索引0-7  减去 索引 0-2 就是连续索引3-7
-*
-* */
+ * 前缀和                   索引0-7  减去 索引 0-2 就是连续索引3-7
+ *
+ * */
 
 public class Solution {
     public int subarraySum(int[] nums, int k) {
-        int ans=0;
-        int[] sum= new int[nums.length+1];
-        for(int i=1;i<sum.length;i++){
-            sum[i]=sum[i-1]+nums[i-1];
+        int ans = 0;
+        int[] sum = new int[nums.length + 1];
+        for (int i = 1; i < sum.length; i++) {
+            sum[i] = sum[i - 1] + nums[i - 1];
         }
-        Map<Integer,Integer> map =new HashMap<>();
-        for(int i: sum){
-            ans+=map.getOrDefault(i-k,0);
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int i : sum) {
+            ans += map.getOrDefault(i - k, 0);
             //System.out.println(map.getOrDefault(i-k,0));
-            map.put(i,map.getOrDefault(i,0)+1);
+            map.put(i, map.getOrDefault(i, 0) + 1);
         }
         return ans;
     }

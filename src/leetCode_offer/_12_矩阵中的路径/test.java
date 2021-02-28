@@ -17,7 +17,7 @@ import leetCode._79_单词搜索.*;
 
 public class test {
     public static void main(String[] args) {
-        char[][] board = {{'a','b','a','b'},{'a','d','a','b'},{'a','b','a','b'}};
+        char[][] board = {{'a', 'b', 'a', 'b'}, {'a', 'd', 'a', 'b'}, {'a', 'b', 'a', 'b'}};
         System.out.println(new Solution().exist(board, "abda"));
     }
 }

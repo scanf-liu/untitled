@@ -11,28 +11,27 @@ package leetCode._494_目标和;
 //        著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 
 
-
 public class Solution {
     public int findTargetSumWays(int[] nums, int S) {
         int sum = 0;
-        for (int i:nums){
+        for (int i : nums) {
             sum += i;
         }
         // 背包容量为整数，sum+S为奇数的话不满足要求
-        if ((sum+S)%2==1){
+        if ((sum + S) % 2 == 1) {
             return 0;
         }
         // 目标和不可能大于总和
-        if (S>sum){
+        if (S > sum) {
             return 0;
         }
-        int len = (sum+S)/2;
-        int[] dp = new int[len+1];
+        int len = (sum + S) / 2;
+        int[] dp = new int[len + 1];
         dp[0] = 1;
 
-        for (int num:nums){
-            for (int i=len;i>=num;--i){
-                dp[i] += dp[i-num];
+        for (int num : nums) {
+            for (int i = len; i >= num; --i) {
+                dp[i] += dp[i - num];
             }
         }
 

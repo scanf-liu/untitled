@@ -32,15 +32,13 @@ package leetCode_offer._31_栈的压入弹出序列;
 */
 
 
-
-
 public class test {
     public static void main(String[] args) {
-        int[] a = new int[]{1,2,3,4,5};
-        int[] b = new int[]{3,2,1,5,4};
-        System.out.println(new Solution().validateStackSequences(a,b));
-        System.out.println(new Solution1().validateStackSequences(a,b));
-        System.out.println(new Solution2().validateStackSequences(a,b));
+        int[] a = new int[]{1, 2, 3, 4, 5};
+        int[] b = new int[]{3, 2, 1, 5, 4};
+        System.out.println(new Solution().validateStackSequences(a, b));
+        System.out.println(new Solution1().validateStackSequences(a, b));
+        System.out.println(new Solution2().validateStackSequences(a, b));
 
     }
 }

@@ -28,7 +28,7 @@ import java.net.Socket;
 
 public class test {
     public static void main(String[] args) {
-        int[] a = new int[]{4,6,8,9,0,4,1,45};
+        int[] a = new int[]{4, 6, 8, 9, 0, 4, 1, 45};
         System.out.println(Solution.rob(a));
         System.out.println(Solution.rob1(a));
     }
@@ -37,16 +37,17 @@ public class test {
 class Solution {
     public static int rob(int[] nums) {
         int now = 0, per = 0;
-        for(int i = 0; i < nums.length ; i++){
+        for (int i = 0; i < nums.length; i++) {
             int helper = now;
             now = Math.max(now, per + nums[i]);
             per = helper;
         }
         return now;
     }
+
     public static int rob1(int[] nums) {
         int docatch = 0, nocatch = 0;
-        for(int i = 0; i < nums.length ; i++){
+        for (int i = 0; i < nums.length; i++) {
             int helper = Math.max(docatch, nocatch);
             docatch = nocatch + nums[i];
             nocatch = helper;

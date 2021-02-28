@@ -28,24 +28,24 @@ import java.util.Set;
 
 public class test {
     public static void main(String[] args) {
-        System.out.println(Solution.longestConsecutive(new int[]{0,3,7,2,5,8,4,6,0,1}));
+        System.out.println(Solution.longestConsecutive(new int[]{0, 3, 7, 2, 5, 8, 4, 6, 0, 1}));
     }
 }
 
 class Solution {
     public static int longestConsecutive(int[] nums) {
         Set<Long> set = new HashSet<Long>();
-        for(int i = 0; i< nums.length; i++){
-            set.add((long)nums[i]);
+        for (int i = 0; i < nums.length; i++) {
+            set.add((long) nums[i]);
         }
         int ans = 0;
 
-        for(long val : set){
-            if(set.contains(val-1)) continue;
+        for (long val : set) {
+            if (set.contains(val - 1)) continue;
             long now = val;
             int ans_now = 1;
 
-            while(set.contains(now + 1)){
+            while (set.contains(now + 1)) {
                 now = now + 1;
                 ans_now = ans_now + 1;
             }

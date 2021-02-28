@@ -55,23 +55,23 @@ public class TreeOperation {
         // 用一个字符串数组来存储每个位置应显示的元素
         String[][] res = new String[arrayHeight][arrayWidth];
         // 对数组进行初始化，默认为一个空格
-        for (int i = 0; i < arrayHeight; i ++) {
-            for (int j = 0; j < arrayWidth; j ++) {
+        for (int i = 0; i < arrayHeight; i++) {
+            for (int j = 0; j < arrayWidth; j++) {
                 res[i][j] = " ";
             }
         }
 
         // 从根节点开始，递归处理整个树
         // res[0][(arrayWidth + 1)/ 2] = (char)(root.val + '0');
-        writeArray(root, 0, arrayWidth/ 2, res, treeDepth);
+        writeArray(root, 0, arrayWidth / 2, res, treeDepth);
 
         // 此时，已经将所有需要显示的元素储存到了二维数组中，将其拼接并打印即可
-        for (String[] line: res) {
+        for (String[] line : res) {
             StringBuilder sb = new StringBuilder();
-            for (int i = 0; i < line.length; i ++) {
+            for (int i = 0; i < line.length; i++) {
                 sb.append(line[i]);
                 if (line[i].length() > 1 && i <= line.length - 1) {
-                    i += line[i].length() > 4 ? 2: line[i].length() - 1;
+                    i += line[i].length() > 4 ? 2 : line[i].length() - 1;
                 }
             }
             System.out.println(sb.toString());

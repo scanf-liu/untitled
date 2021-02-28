@@ -37,25 +37,24 @@ package leetCode._62_不同路径_排列组合;
 */
 
 
-
 public class test {
     public static void main(String[] args) {
-        System.out.println(Solution.uniquePaths(2,3));
+        System.out.println(Solution.uniquePaths(2, 3));
     }
 }
 
 class Solution {
     public static int uniquePaths(int m, int n) {
-        return (calculate(Math.min(m-1,n-1), n+m -2));
+        return (calculate(Math.min(m - 1, n - 1), n + m - 2));
     }
 
 
     // m > k
-    public static int calculate (int k , int m){
+    public static int calculate(int k, int m) {
         double ans = 1;
-        for( int i = 1; i <= k ; i++){
-            ans = ans * ( m - i +1)/i;
+        for (int i = 1; i <= k; i++) {
+            ans = ans * (m - i + 1) / i;
         }
-        return (int)ans;
+        return (int) ans;
     }
 }

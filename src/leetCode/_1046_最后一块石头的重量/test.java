@@ -28,16 +28,13 @@ package leetCode._1046_最后一块石头的重量;
         著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。*/
 
 
-
-
-
 public class test {
     public static void main(String[] args) {
-        int[] a = new int[]{12,3,5,6,7,78,8,33};
+        int[] a = new int[]{12, 3, 5, 6, 7, 78, 8, 33};
         System.out.println(new Solution().lastStoneWeight(a));
-        a = new int[]{12,3,5,6,7,78,8,33};
+        a = new int[]{12, 3, 5, 6, 7, 78, 8, 33};
         System.out.println(new Solution1().lastStoneWeight(a));
-        a = new int[]{12,3,5,6,7,78,8,33};
+        a = new int[]{12, 3, 5, 6, 7, 78, 8, 33};
         System.out.println(new Solution2().lastStoneWeight(a));
     }
 }

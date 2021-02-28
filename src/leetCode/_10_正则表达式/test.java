@@ -40,7 +40,7 @@ p = "a"
 public class test {
     public static void main(String[] args) {
         String a = "aaaa.*", b = "aaaabb";
-        System.out.println(Solution.isMatch(b,a));
+        System.out.println(Solution.isMatch(b, a));
 
 
     }
@@ -50,15 +50,15 @@ class Solution {
     public static boolean isMatch(String s, String p) {
 
         char[] s1 = s.toCharArray(), p1 = p.toCharArray();
-        boolean[][] dp = new boolean[s1.length+1][p1.length+1];
+        boolean[][] dp = new boolean[s1.length + 1][p1.length + 1];
         dp[0][0] = true;
-        for(int i = 0;i<=s1.length;i++){
-            for (int j = 1; j<=p1.length;j++){
-                if(p1[j-1]!='*'){
-                    if (i>0 &&(s1[i-1]==p1[j-1]||p1[j-1]=='.')) dp[i][j] = dp[i - 1][j - 1];
-                }else{
-                    if (j>1) dp[i][j] |= dp[i][j - 2];
-                    if(i > 0 && j > 1 && (s1[i - 1] == p1[j - 2] || p1[j - 2] == '.'))dp[i][j] |= dp[i - 1][j];
+        for (int i = 0; i <= s1.length; i++) {
+            for (int j = 1; j <= p1.length; j++) {
+                if (p1[j - 1] != '*') {
+                    if (i > 0 && (s1[i - 1] == p1[j - 1] || p1[j - 1] == '.')) dp[i][j] = dp[i - 1][j - 1];
+                } else {
+                    if (j > 1) dp[i][j] |= dp[i][j - 2];
+                    if (i > 0 && j > 1 && (s1[i - 1] == p1[j - 2] || p1[j - 2] == '.')) dp[i][j] |= dp[i - 1][j];
                 }
             }
         }

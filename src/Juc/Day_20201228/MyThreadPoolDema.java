@@ -18,13 +18,13 @@ public class MyThreadPoolDema {
 
         try {
             for (int i = 0; i < 8; i++) {
-                threadPool.execute(()->{
-                    System.out.println(Thread.currentThread().getName()+"\t 办理业务");
+                threadPool.execute(() -> {
+                    System.out.println(Thread.currentThread().getName() + "\t 办理业务");
                 });
             }
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
-        }finally {
+        } finally {
             threadPool.shutdown();
         }
     }

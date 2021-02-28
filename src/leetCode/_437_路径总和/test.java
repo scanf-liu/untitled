@@ -6,7 +6,7 @@ import leetCode.TreeNode.TreeNode;
 public class test {
     public static void main(String[] args) {
         TreeNode a = ConstructTree.constructTree(new Integer[]{
-                1,2,2,null,null,null,0,null,-1,null,1});
-        System.out.println(new Solution().pathSum(a,3));
+                1, 2, 2, null, null, null, 0, null, -1, null, 1});
+        System.out.println(new Solution().pathSum(a, 3));
     }
 }

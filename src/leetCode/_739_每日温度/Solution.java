@@ -8,7 +8,7 @@ public class Solution {
         //从右向左遍历
         for (int i = length - 2; i >= 0; i--) {
             // j+= result[j]是利用已经有的结果进行跳跃
-            for (int j = i + 1; j < length; j+= result[j]) {
+            for (int j = i + 1; j < length; j += result[j]) {
                 if (T[j] > T[i]) {
                     result[i] = j - i;
                     break;

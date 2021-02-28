@@ -14,7 +14,7 @@ package leetCode.最长回文;
 
 public class test {
     public static void main(String[] args) {
-        String s1 = "ababb" ;
+        String s1 = "ababb";
         System.out.println(Solution.longestPalindrome(s1));
     }
 }
@@ -25,17 +25,17 @@ class Solution {
         int i = 0, j = 0;
         String s1 = new String();
         String s2 = new String();
-        for (; i<s.length(); i++){
+        for (; i < s.length(); i++) {
             j = 0;
-            for (; i-j>=0&&i+j<s.length();j++){
-                if (s.charAt(i+j) != s.charAt(i-j)){
+            for (; i - j >= 0 && i + j < s.length(); j++) {
+                if (s.charAt(i + j) != s.charAt(i - j)) {
                     break;
                 }
-                s1=s.substring(i-j,i+j);
-                System.out.println(i+"++"+j );
+                s1 = s.substring(i - j, i + j);
+                System.out.println(i + "++" + j);
                 System.out.println(s1);
             }
-            if(s1.length() > s2.length()){
+            if (s1.length() > s2.length()) {
                 s2 = s1;
             }
         }

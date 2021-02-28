@@ -29,10 +29,9 @@ package leetCode._55_跳跃游戏;
 */
 
 
-
 public class test {
     public static void main(String[] args) {
-        int[] a = {3,2,1,0};
+        int[] a = {3, 2, 1, 0};
         System.out.println(Solution.canJump(a));
     }
 }
@@ -43,9 +42,9 @@ class Solution {
 
         int dp = nums[0];
 
-        for (int i = 1 ; i < nums.length ; i++){
-            if(dp > 0){
-                dp = Math.max(nums[i], dp-1);
+        for (int i = 1; i < nums.length; i++) {
+            if (dp > 0) {
+                dp = Math.max(nums[i], dp - 1);
             } else return false;
         }
         return true;

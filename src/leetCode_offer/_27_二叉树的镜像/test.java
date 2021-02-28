@@ -6,7 +6,7 @@ import leetCode.TreeNode.TreeOperation;
 
 public class test {
     public static void main(String[] args) {
-        TreeNode a = ConstructTree.constructTree(new Integer[]{1,2,3,4,5,4,5});
+        TreeNode a = ConstructTree.constructTree(new Integer[]{1, 2, 3, 4, 5, 4, 5});
         TreeOperation.show(a);
         TreeOperation.show(new Solution().mirrorTree(a));
     }

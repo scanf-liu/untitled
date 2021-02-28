@@ -6,7 +6,7 @@ import leetCode.TreeNode.TreeOperation;
 
 public class test {
     public static void main(String[] args) {
-        TreeNode node = ConstructTree.constructTree(new Integer[]{3,5,1,6,2,0,8,null,null,7,4});
+        TreeNode node = ConstructTree.constructTree(new Integer[]{3, 5, 1, 6, 2, 0, 8, null, null, 7, 4});
         TreeOperation.show(node);
         String a = CodeC.serialize(node);
         System.out.println(a);

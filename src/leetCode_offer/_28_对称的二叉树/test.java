@@ -34,13 +34,12 @@ import leetCode.TreeNode.TreeOperation;
 //        输出：false
 
 
-
 public class test {
     public static void main(String[] args) {
-        TreeNode a = ConstructTree.constructTree(new Integer[]{1,2,2,3,4,4,3});
+        TreeNode a = ConstructTree.constructTree(new Integer[]{1, 2, 2, 3, 4, 4, 3});
         TreeOperation.show(a);
         System.out.println(new Solution().isSymmetric(a));
-        a = ConstructTree.constructTree(new Integer[]{1,2,2,null,3,null,3});
+        a = ConstructTree.constructTree(new Integer[]{1, 2, 2, null, 3, null, 3});
         TreeOperation.show(a);
         System.out.println(new Solution().isSymmetric(a));
     }

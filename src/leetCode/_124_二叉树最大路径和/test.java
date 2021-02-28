@@ -1,4 +1,5 @@
 package leetCode._124_二叉树最大路径和;
+
 import leetCode.TreeNode.*;
 
 import java.net.Socket;
@@ -37,22 +38,25 @@ import java.net.Socket;
 
 public class test {
     public static void main(String[] args) {
-        TreeNode root = ConstructTree.constructTree(new Integer[]{-10,9,20,null,null,15,7});
+        TreeNode root = ConstructTree.constructTree(new Integer[]{-10, 9, 20, null, null, 15, 7});
         System.out.println(maxPathSum(root));
     }
+
     static int ans = 0;
+
     public static int maxPathSum(TreeNode root) {
         if (root == null) return 0;
         ans = root.val;
         helper(root);
         return ans;
     }
-    public static int helper(TreeNode root){
+
+    public static int helper(TreeNode root) {
         int now = 0;
         int left = 0, right = 0;
-        if (root.left != null)  left = helper(root.left);
-        if (root.right != null)  right = helper(root.right);
-        ans = Math.max(ans, right+left+root.val);
+        if (root.left != null) left = helper(root.left);
+        if (root.right != null) right = helper(root.right);
+        ans = Math.max(ans, right + left + root.val);
         return Math.max(Math.max(right, left) + root.val, 0);
     }
 }

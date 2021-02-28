@@ -16,8 +16,6 @@ package leetCode_offer._45_把数组排列成最小的数;
 */
 
 
-
-
 public class test {
     public static void main(String[] args) {
         System.out.println(new Solution().minNumber(new int[]{33, 22, 3, 2, 3, 2, 132}));

@@ -29,15 +29,15 @@ public class Solution {
         LinkedList<TreeNode> list = new LinkedList<>();
         List<Integer> ans = new ArrayList<>();
         list.add(root);
-        while(list.size() != 0){
+        while (list.size() != 0) {
             TreeNode temp = list.removeFirst();
-            if(temp == null) continue;
+            if (temp == null) continue;
             ans.add(temp.val);
             list.add(temp.left);
             list.add(temp.right);
         }
         int[] fin = new int[ans.size()];
-        for(int i = 0; i < ans.size(); i++){
+        for (int i = 0; i < ans.size(); i++) {
             fin[i] = ans.get(i);
         }
         return fin;

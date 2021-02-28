@@ -5,12 +5,10 @@ import java.util.List;
 
 public class test {
     public static void main(String[] args) {
-        int[] a = {1,3,5,6,8};
+        int[] a = {1, 3, 5, 6, 8};
         System.out.println(Solution.subsets(a).toString());
     }
 }
-
-
 
 
 class Solution {
@@ -22,18 +20,18 @@ class Solution {
         List<Integer> flag = new ArrayList<>();
         flag.add(0);
 
-        for(int i = 0; i < nums.length; i++){
+        for (int i = 0; i < nums.length; i++) {
             int size = list.size();
-            for (int j = 0; j < list.size(); j++){
+            for (int j = 0; j < list.size(); j++) {
                 List<Integer> now = new ArrayList<>(list.remove(0));
                 int now_flag = flag.get(0).intValue();
                 flag.remove(0);
-                for (int k = now_flag; k < nums.length; k++){
+                for (int k = now_flag; k < nums.length; k++) {
                     now.add(nums[k]);
                     list.add(new ArrayList(now));
                     ans.add(new ArrayList(now));
-                    flag.add(k+1);
-                    now.remove(now.size()-1);
+                    flag.add(k + 1);
+                    now.remove(now.size() - 1);
                 }
 
             }

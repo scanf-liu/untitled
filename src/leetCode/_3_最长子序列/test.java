@@ -14,7 +14,7 @@ package leetCode._3_最长子序列;
 
 public class test {
     public static void main(String[] args) {
-        String str="acvhgfjkbabbaaba";
+        String str = "acvhgfjkbabbaaba";
         System.out.println(Solution.lengthOfLongestSubstring(str));
     }
 }
@@ -22,19 +22,19 @@ public class test {
 class Solution {
     public static int lengthOfLongestSubstring(String s) {
 
-        char[]  c = s.toCharArray();
+        char[] c = s.toCharArray();
         int answer = 0, k = 0, sameplace = s.length(), startplace = 0;
-        while(k < s.length()){
+        while (k < s.length()) {
             char now = c[k];
-            for(int i=k+1; i<sameplace; i++){
-                if( c[i]==now ){
+            for (int i = k + 1; i < sameplace; i++) {
+                if (c[i] == now) {
                     sameplace = i;
                     break;
                 }
             }
             k++;
-            if (k == sameplace){
-                answer = Math.max(sameplace - startplace,answer);
+            if (k == sameplace) {
+                answer = Math.max(sameplace - startplace, answer);
                 sameplace = s.length();
                 k = ++startplace;
             }

@@ -13,16 +13,17 @@ public class Solution {
         System.out.println(new Solution().helper("j1fkjf,134650"));
         System.out.println(new Solution().helper(""));
     }
-    public String helper(String s){
+
+    public String helper(String s) {
         int[] count = new int[10];
-        for(int i = 0 ; i < s.length() ; i++){
-            if(s.charAt(i)>='0'&&s.charAt(i)<='9'){
-                count[s.charAt(i)-'0']++;
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) >= '0' && s.charAt(i) <= '9') {
+                count[s.charAt(i) - '0']++;
             }
         }
         StringBuffer ans = new StringBuffer();
-        for(int i = 0; i < 10; i++){
-            while( count[i] >= 1){
+        for (int i = 0; i < 10; i++) {
+            while (count[i] >= 1) {
                 ans.append(i);
                 count[i]--;
             }

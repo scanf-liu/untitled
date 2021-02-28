@@ -1,13 +1,14 @@
 package Juc.LamdbaExpressTest;
 
-interface Foo
-{
+interface Foo {
     public void say();
 }
 
 public class test {
     public static void main(String[] args) {
-        Foo foo = () -> {System.out.println("hello");};
+        Foo foo = () -> {
+            System.out.println("hello");
+        };
         foo.say();
         Foo foo1 = new Foo() {
             @Override

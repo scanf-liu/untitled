@@ -48,10 +48,9 @@ import java.util.Arrays;
 */
 
 
-
 public class test {
     public static void main(String[] args) {
-        int[] a = new int[]{1,2,3,4,5,1,1,1,1,1};
+        int[] a = new int[]{1, 2, 3, 4, 5, 1, 1, 1, 1, 1};
         System.out.println(Solution.majorityElement(a));
         System.out.println(Solution.majorityElement1(a));
         System.out.println(Solution.majorityElement2(a));
@@ -61,14 +60,13 @@ public class test {
 class Solution {
 
 
-
     public static int majorityElement(int[] nums) {
         int count = 1;
         int candidate = nums[0];
 
-        for(int i = 1 ; i < nums.length ; i++){
-            if(candidate == nums[i]) count++;
-            else if(--count == -1){
+        for (int i = 1; i < nums.length; i++) {
+            if (candidate == nums[i]) count++;
+            else if (--count == -1) {
                 candidate = nums[i];
                 count = 1;
             }
@@ -78,7 +76,7 @@ class Solution {
 
     public static int majorityElement1(int[] nums) {
         Arrays.sort(nums);
-        return(nums[nums.length/2]);
+        return (nums[nums.length / 2]);
     }
 
     public static int majorityElement2(int[] nums) {

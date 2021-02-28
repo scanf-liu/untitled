@@ -10,15 +10,14 @@ public class CodeC {
         StringBuffer a = new StringBuffer();
         LinkedList<TreeNode> helper = new LinkedList<TreeNode>();
         helper.addLast(root);
-        while(helper.size() > 0){
+        while (helper.size() > 0) {
             TreeNode now = helper.poll();
-            if(now == null){
-                a.append("n,") ;
+            if (now == null) {
+                a.append("n,");
                 continue;
-            }
-            else{
-                a.append(now.val) ;
-                a.append(",") ;
+            } else {
+                a.append(now.val);
+                a.append(",");
                 helper.addLast(now.left);
                 helper.addLast(now.right);
             }
@@ -33,31 +32,31 @@ public class CodeC {
         LinkedList<TreeNode> helper1 = new LinkedList<TreeNode>();
         String a = "";
 
-        for(int i = 0; i < data.length(); i++){
-            if(data.charAt(i) == ','){
+        for (int i = 0; i < data.length(); i++) {
+            if (data.charAt(i) == ',') {
                 TreeNode now = new TreeNode();
-                if(!a.equals("n")){
+                if (!a.equals("n")) {
                     now.val = Integer.parseInt(a);
-                }else now = null;
+                } else now = null;
                 helper.addLast(now);
                 a = "";
-            }else{
+            } else {
                 a += data.charAt(i);
             }
 
         }
         TreeNode root = helper.poll();
-        if(root == null) return root;
+        if (root == null) return root;
 
         helper1.addLast(root);
 
-        while(helper.size() > 0){
+        while (helper.size() > 0) {
             TreeNode now = helper1.poll();
 
-            now.left =  helper.poll();
-            if(now.left != null) helper1.addLast(now.left);
-            now.right =  helper.poll();
-            if(now.right != null) helper1.addLast(now.right);
+            now.left = helper.poll();
+            if (now.left != null) helper1.addLast(now.left);
+            now.right = helper.poll();
+            if (now.right != null) helper1.addLast(now.right);
 
         }
         return root;

@@ -1,24 +1,24 @@
 package Juc.SaleTicket;
 
 
-class AirCondition{
+class AirCondition {
     private int tem = 0;
 
     public synchronized void incre() throws InterruptedException {
-        if(tem != 0){
+        if (tem != 0) {
             this.wait();
         }
         tem++;
-        System.out.println(Thread.currentThread().getName()+"\t"+tem);
+        System.out.println(Thread.currentThread().getName() + "\t" + tem);
         this.notifyAll();
     }
 
     public synchronized void decre() throws InterruptedException {
-        if(tem == 0){
+        if (tem == 0) {
             this.wait();
         }
         tem--;
-        System.out.println(Thread.currentThread().getName()+"\t"+tem);
+        System.out.println(Thread.currentThread().getName() + "\t" + tem);
         this.notifyAll();
     }
 }

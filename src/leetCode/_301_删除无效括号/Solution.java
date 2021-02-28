@@ -8,15 +8,16 @@ import java.util.Set;
 public class Solution {
     // 用集合存储所有正确的字符串，可避免重复
     private Set<String> set = new HashSet<>();
+
     public List<String> removeInvalidParentheses(String s) {
         char[] ss = s.toCharArray();
         int open = 0, close = 0;
         // 获取应该去除的左右括号数
         for (char c : ss) {
-            if (c == '(') open ++;
+            if (c == '(') open++;
             else if (c == ')')
-                if (open > 0) open --;
-                else close ++;
+                if (open > 0) open--;
+                else close++;
         }
         // 回溯
         backTracking(ss, new StringBuilder(), 0, 0, 0, open, close);

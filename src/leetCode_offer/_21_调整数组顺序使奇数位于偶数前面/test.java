@@ -18,9 +18,9 @@ import java.util.Arrays;
 
 public class test {
     public static void main(String[] args) {
-        int[] a = new int[]{1,2,4,6,6,8,78,5,9};
+        int[] a = new int[]{1, 2, 4, 6, 6, 8, 78, 5, 9};
         System.out.println(Arrays.toString(new Solution().exchange(a)));
-        a = new int[]{1,2,4,6,6,8,78,5,9};
+        a = new int[]{1, 2, 4, 6, 6, 8, 78, 5, 9};
         System.out.println(Arrays.toString(new Solution1().exchange(a)));
     }
 

@@ -3,14 +3,15 @@ package Juc.SaleTicket;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
-class Ticket1{
-    private int num  = 90;
+class Ticket1 {
+    private int num = 90;
     private Lock lock = new ReentrantLock();
-    public void saleTicket(){
+
+    public void saleTicket() {
         lock.lock();
         try {
-            if(num > 0) System.out.println(Thread.currentThread().getName()+" now："+num--+" last "+num);
-        }finally {
+            if (num > 0) System.out.println(Thread.currentThread().getName() + " now：" + num-- + " last " + num);
+        } finally {
             lock.unlock();
         }
     }
@@ -26,7 +27,7 @@ public class SaleTicket1 {
                     a.saleTicket();
                 }
             }
-        }),"A").start();
+        }), "A").start();
         new Thread((new Runnable() {
             @Override
             public void run() {
@@ -34,11 +35,11 @@ public class SaleTicket1 {
                     a.saleTicket();
                 }
             }
-        }),"B").start();
+        }), "B").start();
         new Thread(() -> {
             for (int i = 0; i < 40; i++) {
                 a.saleTicket();
             }
-        },"C").start();
+        }, "C").start();
     }
 }

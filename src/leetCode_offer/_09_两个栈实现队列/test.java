@@ -1,8 +1,6 @@
 package leetCode_offer._09_两个栈实现队列;
 
 
-
-
 public class test {
     public static void main(String[] args) {
         CQueue a = new CQueue();

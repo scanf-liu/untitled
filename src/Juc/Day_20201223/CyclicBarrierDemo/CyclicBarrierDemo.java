@@ -7,7 +7,7 @@ import java.util.concurrent.TimeUnit;
 public class CyclicBarrierDemo {
     public static void main(String[] args) {
 
-        CyclicBarrier cyclicBarrier = new CyclicBarrier(7,()->{
+        CyclicBarrier cyclicBarrier = new CyclicBarrier(7, () -> {
             System.out.println("the dragon appears");
         });
         for (int i = 1; i < 8; i++) {
@@ -17,7 +17,7 @@ public class CyclicBarrierDemo {
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                System.out.println("当前第"+Thread.currentThread().getName());
+                System.out.println("当前第" + Thread.currentThread().getName());
                 try {
                     cyclicBarrier.await();
                 } catch (InterruptedException e) {

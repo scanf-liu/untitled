@@ -7,7 +7,7 @@ public class Solution {
         }
         // 统计每个数字出现的次数
         int[] counter = new int[10001];
-        for (int num: arr) {
+        for (int num : arr) {
             counter[num]++;
         }
         // 根据counter数组从头找出k个数作为返回结果

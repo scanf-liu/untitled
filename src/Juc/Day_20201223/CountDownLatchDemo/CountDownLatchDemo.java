@@ -10,18 +10,18 @@ public class CountDownLatchDemo {
 
         for (int i = 0; i < 6; i++) {
             new Thread(() -> {
-                System.out.println(Thread.currentThread().getName()+" leave");
+                System.out.println(Thread.currentThread().getName() + " leave");
                 try {
                     TimeUnit.SECONDS.sleep(4);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
                 countDownLatch.countDown();
-            },String.valueOf(i)).start();
+            }, String.valueOf(i)).start();
         }
         countDownLatch.await();
         new Thread(() -> {
-            System.out.println(Thread.currentThread().getName()+" closed the door");
+            System.out.println(Thread.currentThread().getName() + " closed the door");
         }, "monitor").start();
     }
 }

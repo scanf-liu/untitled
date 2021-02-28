@@ -19,15 +19,16 @@ import leetCode.ListNode.ListNode;
 
 public class test {
     public static void main(String[] args) {
-        ListNode tail = new ListNode(8,null);
+        ListNode tail = new ListNode(8, null);
         ListNode a = new ListNode(1, tail);
         ListNode b = new ListNode(6, a);
         ListNode c = new ListNode(5, b);
         tail.next = c;
-        ListNode d = new ListNode(111,c);
+        ListNode d = new ListNode(111, c);
         System.out.println(Solution.detectCycle(d).val);
     }
 }
+
 class Solution {
     public static ListNode detectCycle(ListNode head) {
         ListNode fast = head, slow = head;

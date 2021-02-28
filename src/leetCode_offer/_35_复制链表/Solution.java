@@ -29,27 +29,26 @@ import java.util.Map;
         返回新链表的头节点 res 即可。*/
 
 
-
 public class Solution {
     public Node copyRandomList(Node head) {
-        if(head == null) return null;
+        if (head == null) return null;
         Map<Node, Node> map = new HashMap<>();
         Node headCopy = new Node(head.val);
         Node tempCopy = headCopy;
         //Node now;
         map.put(head, headCopy);
         map.put(null, null);
-        while(head != null){
-            if(map.containsKey(head.next)){
+        while (head != null) {
+            if (map.containsKey(head.next)) {
                 tempCopy.next = map.get(head.next);
-            }else{
+            } else {
                 Node now = new Node(head.next.val);
                 map.put(head.next, now);
                 tempCopy.next = now;
             }
-            if(map.containsKey(head.random)){
+            if (map.containsKey(head.random)) {
                 tempCopy.random = map.get(head.random);
-            }else{
+            } else {
                 Node now = new Node(head.random.val);
                 map.put(head.random, now);
                 tempCopy.random = now;

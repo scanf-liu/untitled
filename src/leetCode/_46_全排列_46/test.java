@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-
-
 /*给定一个 没有重复 数字的序列，返回其所有可能的全排列。
 
 示例:
@@ -27,9 +25,9 @@ import java.util.List;
 public class test {
 
     public static void main(String[] args) {
-        int[] nums = new int[] {1,2,3,4};
+        int[] nums = new int[]{1, 2, 3, 4};
         List<List<Integer>> ans = Solution.permute(nums);
-        for(int i = 0; i < ans.size() ; i++){
+        for (int i = 0; i < ans.size(); i++) {
             System.out.println(ans.get(i));
         }
     }
@@ -47,7 +45,7 @@ class Solution {
 
     }
 
-private static void backtrack(List<List<Integer>> res, int[] nums, ArrayList<Integer> tmp, int[] visited) {
+    private static void backtrack(List<List<Integer>> res, int[] nums, ArrayList<Integer> tmp, int[] visited) {
         if (tmp.size() == nums.length) {
             res.add(new ArrayList<>(tmp));
             return;

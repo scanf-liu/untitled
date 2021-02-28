@@ -24,7 +24,7 @@ public class test {
     public static void main(String[] args) {
         String[] strs = {"eat", "tea", "tan", "ate", "nat", "bat"};
         List<List<String>> list = Solution.groupAnagrams(strs);
-        for (int i = 0; i < list.size(); i++ ){
+        for (int i = 0; i < list.size(); i++) {
             System.out.println(list.get(i));
         }
 

@@ -23,11 +23,11 @@ import java.util.Arrays;
 
 public class test {
     public static void main(String[] args) {
-        int[][] a = {{1,3},{3,9},{4,10}};
+        int[][] a = {{1, 3}, {3, 9}, {4, 10}};
         int[][] b = Solution.merge(a);
-        for (int i = 0; i <b.length; i++){
-            for( int j = 0 ; j < 2; j++){
-                System.out.print(b[i][j]+" ");
+        for (int i = 0; i < b.length; i++) {
+            for (int j = 0; j < 2; j++) {
+                System.out.print(b[i][j] + " ");
             }
             System.out.println("");
 
@@ -38,27 +38,26 @@ public class test {
 }
 
 
-
 class Solution {
     public static int[][] merge(int[][] intervals) {
 
-        if(intervals.length <= 1) return intervals;
+        if (intervals.length <= 1) return intervals;
 
-        Arrays.sort(intervals,(a, b)->a[0]-b[0]);
+        Arrays.sort(intervals, (a, b) -> a[0] - b[0]);
 
         int[] use = new int[intervals.length];
         int[][] ans1 = new int[intervals.length][2];
 
         int k = 0;
 
-        for(int i = 0 ; i < intervals.length ; i++){
+        for (int i = 0; i < intervals.length; i++) {
 
             if (use[i] == 1) continue;
             use[i] = 1;
             int[] now = intervals[i];
-            for (int j = i+1; j < intervals.length; j++){
+            for (int j = i + 1; j < intervals.length; j++) {
                 if (use[j] == 1) continue;
-                if(merge_judge(now , intervals[j])){
+                if (merge_judge(now, intervals[j])) {
                     now = merge_operate(now, intervals[j]);
                     use[j] = 1;
                 }
@@ -67,22 +66,21 @@ class Solution {
         }
 
         int[][] ans = new int[k][2];
-        for(int i = 0; i< k; i++) ans[i] = ans1[i];
-
+        for (int i = 0; i < k; i++) ans[i] = ans1[i];
 
 
         return ans;
     }
 
 
-    public static boolean merge_judge(int[] a , int[] b){
+    public static boolean merge_judge(int[] a, int[] b) {
         if (b[0] <= a[1] && a[0] <= b[1]) return true;
         return false;
     }
 
 
-    public static int[] merge_operate(int[] a , int[] b){
-        int[] ans = {Math.min(a[0],b[0]),Math.max(a[1],b[1])};
+    public static int[] merge_operate(int[] a, int[] b) {
+        int[] ans = {Math.min(a[0], b[0]), Math.max(a[1], b[1])};
         return ans;
     }
 

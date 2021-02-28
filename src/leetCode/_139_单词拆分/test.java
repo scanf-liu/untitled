@@ -42,29 +42,29 @@ public class test {
         List<String> aa = new ArrayList<>();
         aa.add("abc");
         aa.add("dbg");
-        System.out.println(Solution.wordBreak(a,aa));
+        System.out.println(Solution.wordBreak(a, aa));
     }
 }
 
 class Solution {
     public static boolean wordBreak(String s, List<String> wordDict) {
         Map<String, Boolean> map = new HashMap<>();
-        boolean[] dp = new boolean[s.length()+1];
-        for(String ss : wordDict){
-            map.put(ss,true);
+        boolean[] dp = new boolean[s.length() + 1];
+        for (String ss : wordDict) {
+            map.put(ss, true);
         }
         dp[0] = true;
-        for(int i = 0; i <= s.length(); i++){
-            for(int j = i - 1; j >= 0; j--){
-                dp[i] = dp[j] && check(s.substring(j,i),map);
-                if(dp[i]) break;
+        for (int i = 0; i <= s.length(); i++) {
+            for (int j = i - 1; j >= 0; j--) {
+                dp[i] = dp[j] && check(s.substring(j, i), map);
+                if (dp[i]) break;
             }
         }
         return dp[s.length()];
     }
 
 
-    public static boolean check(String s, Map<String, Boolean> map){
+    public static boolean check(String s, Map<String, Boolean> map) {
         return map.getOrDefault(s, false);
     }
 }

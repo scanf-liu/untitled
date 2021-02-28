@@ -28,7 +28,7 @@ public class test {
     public static void main(String[] args) {
         String a = "23";
         List<String> list = Solution.letterCombinations(a);
-        for (int i=0 ; i < list.size(); i++){
+        for (int i = 0; i < list.size(); i++) {
             System.out.println(list.get(i));
         }
     }
@@ -38,22 +38,22 @@ public class test {
 
 class Solution {
     public static List<String> letterCombinations(String digits) {
-        if(digits==null||digits.length()==0){
+        if (digits == null || digits.length() == 0) {
             return new ArrayList<String>();
         }
 
         List<String> list = new ArrayList<String>();
         list.add("");
 
-        String[] letter_map = {" ","*","abc","def","ghi","jkl","mno","pqrs","tuv","wxyz"};
+        String[] letter_map = {" ", "*", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
 
-        for (int i = 0; i < digits.length(); i++){
-            String letter = letter_map[digits.charAt(i)-'0'];
+        for (int i = 0; i < digits.length(); i++) {
+            String letter = letter_map[digits.charAt(i) - '0'];
             int size = list.size();
-            for (int j = 0; j < size; j++){
+            for (int j = 0; j < size; j++) {
                 String tmp = list.remove(0);
-                for (int k=0;k<letter.length();k++){
-                    list.add(tmp+letter.charAt(k));
+                for (int k = 0; k < letter.length(); k++) {
+                    list.add(tmp + letter.charAt(k));
                 }
             }
         }

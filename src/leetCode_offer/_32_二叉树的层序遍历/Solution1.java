@@ -29,17 +29,17 @@ public class Solution1 {
     public List<List<Integer>> levelOrder(TreeNode root) {
         List<List<Integer>> ans = new LinkedList<>();
         LinkedList<TreeNode> helper = new LinkedList<>();
-        if(root == null) return ans;
+        if (root == null) return ans;
         helper.add(root);
         int flag = 0;
-        while(helper.size() != 0){
+        while (helper.size() != 0) {
             int size = helper.size();
             LinkedList<Integer> ans1 = new LinkedList<>();
-            for(int i = 0; i < size; i++){
+            for (int i = 0; i < size; i++) {
                 TreeNode temp = helper.removeLast();
-                if(temp.left != null) helper.addFirst(temp.left);
-                if(temp.right != null) helper.addFirst(temp.right);
-                if((flag & 1) == 0) ans1.add(temp.val);
+                if (temp.left != null) helper.addFirst(temp.left);
+                if (temp.right != null) helper.addFirst(temp.right);
+                if ((flag & 1) == 0) ans1.add(temp.val);
                 else ans1.addFirst(temp.val);
             }
             ans.add(ans1);

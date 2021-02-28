@@ -5,19 +5,20 @@ public class Solution {
     Node head;
 
     public Node treeToDoublyList(Node root) {
-        if(root == null) return null;
+        if (root == null) return null;
         helper(root);
         head.left = temp;
         temp.right = head;
         return head;
     }
-    public void helper(Node root){
-        if(root == null) return;
+
+    public void helper(Node root) {
+        if (root == null) return;
         helper(root.left);
-        if(head == null){
+        if (head == null) {
             head = root;
             temp = head;
-        }else{
+        } else {
             temp.right = root;
             root.left = temp;
             temp = root;

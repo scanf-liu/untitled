@@ -26,21 +26,21 @@ public class 合并多个有序链表 {
     public static void main(String[] args) {
 
 
-        ListNode tail1 = new ListNode(3,null);
-        ListNode head1 = new ListNode(2,tail1);
-        head1 = new ListNode(2,head1);
-        head1 = new ListNode(1,head1);
+        ListNode tail1 = new ListNode(3, null);
+        ListNode head1 = new ListNode(2, tail1);
+        head1 = new ListNode(2, head1);
+        head1 = new ListNode(1, head1);
 
-        ListNode tail2 = new ListNode(5,null);
-        ListNode head2 = new ListNode(2,tail2);
-        head2 = new ListNode(2,head2);
-        head2 = new ListNode(1,head2);
+        ListNode tail2 = new ListNode(5, null);
+        ListNode head2 = new ListNode(2, tail2);
+        head2 = new ListNode(2, head2);
+        head2 = new ListNode(1, head2);
 
 
-        ListNode tail3 = new ListNode(5,null);
-        ListNode head3 = new ListNode(3,tail3);
-        head3 = new ListNode(2,head3);
-        head3 = new ListNode(1,head3);
+        ListNode tail3 = new ListNode(5, null);
+        ListNode head3 = new ListNode(3, tail3);
+        head3 = new ListNode(2, head3);
+        head3 = new ListNode(1, head3);
 
         ListNode[] list = new ListNode[3];
 
@@ -49,7 +49,7 @@ public class 合并多个有序链表 {
         list[2] = head3;
 
         ListNode head4 = Solution.mergeKLists(list);
-        while (head4 != null){
+        while (head4 != null) {
             System.out.println(head4.val);
             head4 = head4.next;
         }
@@ -59,32 +59,41 @@ public class 合并多个有序链表 {
 class ListNode {
     int val;
     ListNode next;
-    ListNode() {}
-    ListNode(int val) { this.val = val; }
-    ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+
+    ListNode() {
+    }
+
+    ListNode(int val) {
+        this.val = val;
+    }
+
+    ListNode(int val, ListNode next) {
+        this.val = val;
+        this.next = next;
+    }
 }
 
 
 class Solution {
     public static ListNode mergeKLists(ListNode[] lists) {
         ListNode[] tail = lists;
-        ListNode head = null,tail1 = null;
+        ListNode head = null, tail1 = null;
         int k = 0;
-        while (judge(tail)){
+        while (judge(tail)) {
 
             int flag = -1, min = 10000;
-            for (int i = 0; i < lists.length; i++){
-                if (tail[i]!=null && tail[i].val < min ){
+            for (int i = 0; i < lists.length; i++) {
+                if (tail[i] != null && tail[i].val < min) {
                     min = tail[i].val;
                     flag = i;
                 }
             }
 
-            if(k++ == 0){
+            if (k++ == 0) {
                 tail1 = tail[flag];
                 tail[flag] = tail[flag].next;
                 head = tail1;
-            }else{
+            } else {
                 tail1.next = tail[flag];
                 tail[flag] = tail[flag].next;
                 tail1 = tail1.next;
@@ -97,9 +106,9 @@ class Solution {
     }
 
 
-    public static boolean judge (ListNode[] lists){
-        for (int i = 0; i < lists.length; i++){
-            if (lists[i]!=null) return true;
+    public static boolean judge(ListNode[] lists) {
+        for (int i = 0; i < lists.length; i++) {
+            if (lists[i] != null) return true;
         }
         return false;
     }

@@ -39,8 +39,8 @@ import leetCode.TreeNode.TreeNode;
 
 public class test {
     public static void main(String[] args) {
-        TreeNode A = ConstructTree.constructTree(new Integer[]{3,4,5,1,2});
-        TreeNode B = ConstructTree.constructTree(new Integer[]{4,1});
+        TreeNode A = ConstructTree.constructTree(new Integer[]{3, 4, 5, 1, 2});
+        TreeNode B = ConstructTree.constructTree(new Integer[]{4, 1});
         System.out.println(new Solution().isSubStructure(A, B));
     }
 }

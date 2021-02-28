@@ -6,14 +6,14 @@ public class Solution1 {
         int max = 0;
         int temp = 0;
         int[] helper = new int[128];
-        for(int i = 0 ; i < 128; i++) helper[i] = -100;
+        for (int i = 0; i < 128; i++) helper[i] = -100;
         //HashMap<Character, Integer> map = new HashMap<>();
-        for(int i = 0; i < s.length(); i++){
-            if(helper[s.charAt(i)] + temp >= i){
+        for (int i = 0; i < s.length(); i++) {
+            if (helper[s.charAt(i)] + temp >= i) {
                 temp = i - helper[s.charAt(i)];
-            }else temp++;
+            } else temp++;
             helper[s.charAt(i)] = i;
-            if(temp > max) max = temp;
+            if (temp > max) max = temp;
         }
         return max;
     }

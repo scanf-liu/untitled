@@ -7,19 +7,20 @@ public class Solution {
         //if(head == null) return new int[0];
         int length = 0;
         ListNode now = head;
-        while(now != null){
+        while (now != null) {
             now = now.next;
             length++;
         }
-        return reversePrint(new int[length], length-1, head);
+        return reversePrint(new int[length], length - 1, head);
     }
-    public int[] reversePrint(int[] ans, int located, ListNode head){
-        if(located == -1) return ans;
-        if(head.next == null){
+
+    public int[] reversePrint(int[] ans, int located, ListNode head) {
+        if (located == -1) return ans;
+        if (head.next == null) {
             ans[located] = head.val;
             return ans;
         }
-        reversePrint(ans, located -1, head.next);
+        reversePrint(ans, located - 1, head.next);
         ans[located] = head.val;
         return ans;
     }

@@ -5,7 +5,7 @@ import leetCode.ListNode.Construction;
 public class test {
     public static void main(String[] args) {
         Construction.show(new Solution().mergeTwoLists(
-                Construction.construct(new int[]{1,2,5,7,89}),
-                Construction.construct(new int[]{1,8,66,99})));
+                Construction.construct(new int[]{1, 2, 5, 7, 89}),
+                Construction.construct(new int[]{1, 8, 66, 99})));
     }
 }

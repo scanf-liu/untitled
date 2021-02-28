@@ -8,7 +8,7 @@ import java.net.Socket;
 
 public class ClientDemoo {
     public static void main(String[] args) throws IOException {
-        Socket s = new Socket(InetAddress.getByName("DESKTOP-9IDONUJ"),10010);
+        Socket s = new Socket(InetAddress.getByName("DESKTOP-9IDONUJ"), 10010);
         OutputStream os = s.getOutputStream();
         os.write("wewee".getBytes());
 
@@ -16,7 +16,7 @@ public class ClientDemoo {
         byte[] bys = new byte[1024];
         int len = is.read(bys);
 
-        System.out.println(new String(bys,0,len));
+        System.out.println(new String(bys, 0, len));
         s.close();
     }
 }

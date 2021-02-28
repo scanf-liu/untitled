@@ -26,7 +26,6 @@ package leetCode_offer._33_二叉搜索树的后续遍历;
         著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。*/
 
 
-
 public class test {
     public static void main(String[] args) {
         int[] a = new int[]{4, 8, 6, 12, 16, 14, 10};

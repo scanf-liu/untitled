@@ -10,13 +10,13 @@ public class SemaphoreDemo {
             new Thread(() -> {
                 try {
                     semaphore.acquire();
-                    System.out.println(Thread.currentThread().getName()+"\tget the space");
+                    System.out.println(Thread.currentThread().getName() + "\tget the space");
                     TimeUnit.SECONDS.sleep(3);
 
                 } catch (InterruptedException e) {
                     e.printStackTrace();
-                }finally {
-                    System.out.println(Thread.currentThread().getName()+"\tleave the space");
+                } finally {
+                    System.out.println(Thread.currentThread().getName() + "\tleave the space");
                     semaphore.release();
                 }
             }, String.valueOf(i)).start();

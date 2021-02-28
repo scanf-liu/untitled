@@ -28,12 +28,12 @@ public class Solution {
     Map<TreeNode, Integer> helper = new HashMap<>();
 
     public int rob1(TreeNode root) {
-        if(root == null) return 0;
+        if (root == null) return 0;
 
-        if(helper.containsKey(root)) return helper.get(root);
-        int left=0, right=0;
-        if(root.left != null)  left = rob(root.left.left) + rob(root.left.right);
-        if(root.right != null)  right = rob(root.right.left) + rob(root.right.right);
+        if (helper.containsKey(root)) return helper.get(root);
+        int left = 0, right = 0;
+        if (root.left != null) left = rob(root.left.left) + rob(root.left.right);
+        if (root.right != null) right = rob(root.right.left) + rob(root.right.right);
 
         int ans = Math.max(rob(root.left) + rob(root.right), root.val + left + right);
         helper.put(root, ans);

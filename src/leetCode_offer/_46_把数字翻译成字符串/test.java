@@ -12,8 +12,6 @@ package leetCode_offer._46_把数字翻译成字符串;
         解释: 12258有5种不同的翻译，分别是"bccfi", "bwfi", "bczi", "mcfi"和"mzi"*/
 
 
-
-
 public class test {
     public static void main(String[] args) {
         System.out.println(new Solution().translateNum(122723452));

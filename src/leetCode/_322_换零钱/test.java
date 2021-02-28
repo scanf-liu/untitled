@@ -13,8 +13,8 @@ public class test {
     public static void main(String[] args) {
         Solution s = new Solution();
         Solution2 s2 = new Solution2();
-        int[] i = new int[]{244,125,459,120,316,68,357,320};
-        System.out.println(s.coinChange(i,9793));
-        System.out.println(s2.coinChange(i,9793));
+        int[] i = new int[]{244, 125, 459, 120, 316, 68, 357, 320};
+        System.out.println(s.coinChange(i, 9793));
+        System.out.println(s2.coinChange(i, 9793));
     }
 }

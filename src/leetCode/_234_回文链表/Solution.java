@@ -6,7 +6,7 @@ public class Solution {
     public static boolean isPalindrome(ListNode head) {
         ListNode fast = head, slow = head;
 
-        while(fast != null && fast.next != null){
+        while (fast != null && fast.next != null) {
             slow = slow.next;
             fast = fast.next.next;
         }
@@ -14,7 +14,7 @@ public class Solution {
             slow = slow.next;
         }
         slow = rev(slow);
-        while(slow!= null){
+        while (slow != null) {
             if (slow.val != head.val) return false;
             slow = slow.next;
             head = head.next;
@@ -22,9 +22,9 @@ public class Solution {
         return true;
     }
 
-    public static ListNode rev(ListNode head){
+    public static ListNode rev(ListNode head) {
         ListNode per = null;
-        while(head != null){
+        while (head != null) {
             ListNode helper = head.next;
             head.next = per;
             per = head;
@@ -32,6 +32,7 @@ public class Solution {
         }
         return per;
     }
+
     static ListNode temp;
 
     public static boolean isPalindrome1(ListNode head) {

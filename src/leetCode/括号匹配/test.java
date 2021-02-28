@@ -31,22 +31,22 @@ class Solution {
 
         char[] a = new char[size];
         int num = 0;
-        for (int i = 0 ; i < size; i++){
-            if (s.charAt(i) == '('||s.charAt(i) == '['||s.charAt(i) == '{'){
+        for (int i = 0; i < size; i++) {
+            if (s.charAt(i) == '(' || s.charAt(i) == '[' || s.charAt(i) == '{') {
                 a[num++] = s.charAt(i);
-            }else if (num == 0) return false;
-            else if(s.charAt(i) == ')'){
-                if (a[num-1] == '('){
-                    num --;
-                }else return false;
-            }else if(s.charAt(i) == ']'){
-                if (a[num-1] == '['){
-                    num --;
-                }else return false ;
-            }else if(s.charAt(i) == '}'){
-                if (a[num-1] == '{'){
-                    num --;
-                }else return false ;
+            } else if (num == 0) return false;
+            else if (s.charAt(i) == ')') {
+                if (a[num - 1] == '(') {
+                    num--;
+                } else return false;
+            } else if (s.charAt(i) == ']') {
+                if (a[num - 1] == '[') {
+                    num--;
+                } else return false;
+            } else if (s.charAt(i) == '}') {
+                if (a[num - 1] == '{') {
+                    num--;
+                } else return false;
             }
         }
         if (num == 0) return true;

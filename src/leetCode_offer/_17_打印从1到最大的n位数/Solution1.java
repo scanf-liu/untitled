@@ -7,10 +7,10 @@ public class Solution1 {
         for (int i = 0; i < n; i++) {
             str.append('0');
         }
-        while(!increment(str)){
+        while (!increment(str)) {
             // 去掉左侧的0
             int index = 0;
-            while (index < str.length() && str.charAt(index) == '0'){
+            while (index < str.length() && str.charAt(index) == '0') {
                 index++;
             }
             System.out.println(str.toString().substring(index));
@@ -20,7 +20,7 @@ public class Solution1 {
     private boolean increment(StringBuilder str) {
         boolean isOverflow = false;
         for (int i = str.length() - 1; i >= 0; i--) {
-            char s = (char)(str.charAt(i) + 1);
+            char s = (char) (str.charAt(i) + 1);
             // 如果s大于'9'则发生进位
             if (s > '9') {
                 str.replace(i, i + 1, "0");

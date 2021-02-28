@@ -8,7 +8,7 @@ import java.util.Stack;
 
 public class CQueue {
     //成员变量
-    Stack<Integer> A,B;
+    Stack<Integer> A, B;
 
     //构造方法
     public CQueue() {
@@ -21,11 +21,11 @@ public class CQueue {
     }
 
     public int deleteHead() {
-        if(B.isEmpty()){
-            if(A.isEmpty()){
+        if (B.isEmpty()) {
+            if (A.isEmpty()) {
                 return -1;
             }
-            while(!A.isEmpty()){
+            while (!A.isEmpty()) {
                 B.push(A.pop());
             }
         }
